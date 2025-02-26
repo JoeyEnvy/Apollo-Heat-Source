@@ -1,75 +1,76 @@
  //services page slider 
 
-// Animate subtitle
-let subtitleIndex = 0;
-const subtitles = document.querySelectorAll('.sliding-subtitle span');
+document.addEventListener('DOMContentLoaded', function() {
+    const subtitles = document.querySelectorAll('.sliding-subtitle span');
+    let currentIndex = 0;
 
-function animateSubtitle() {
-    subtitles.forEach((span) => span.classList.remove('active'));
-    subtitles[subtitleIndex].classList.add('active');
-    subtitleIndex = (subtitleIndex + 1) % subtitles.length;
-}
+    function showNextSubtitle() {
+        // Remove 'exit' class from all spans
+        subtitles.forEach(span => span.classList.remove('exit'));
 
-setInterval(animateSubtitle, 3000);
+        // Add 'exit' class to current subtitle and remove 'active'
+        subtitles[currentIndex].classList.add('exit');
+        subtitles[currentIndex].classList.remove('active');
 
-// Services slider
-const servicesSlider = document.querySelector('.services-slider');
-const serviceCards = document.querySelectorAll('.service-card');
+        // Move to next subtitle
+        currentIndex = (currentIndex + 1) % subtitles.length;
 
-// Add event listeners for navigation (optional)
-// For a basic slider, you might not need this, but it's useful if you add navigation controls
-// servicesSlider.addEventListener('scroll', function() {
-//     // Handle scroll event
-// });
-
-// For mobile slider
-const mobileSlider = document.querySelector('.services-slider-mobile');
-const mobileServiceCards = document.querySelectorAll('.service-card-mobile');
-
-// Optional: Add touch event listeners for mobile slider
-mobileSlider.addEventListener('touchstart', handleTouchStart, false);
-mobileSlider.addEventListener('touchmove', handleTouchMove, false);
-
-let xDown = null;
-let yDown = null;
-
-function handleTouchStart(event) {
-    if (event.touches.length === 1) {
-        xDown = event.touches[0].clientX;
-        yDown = event.touches[0].clientY;
-    }
-}
-
-function handleTouchMove(event) {
-    if (!xDown || !yDown) {
-        return;
+        // Add 'active' class to new current subtitle
+        subtitles[currentIndex].classList.add('active');
     }
 
-    let xUp = event.touches[0].clientX;
-    let yUp = event.touches[0].clientY;
+    // Show the first subtitle
+    subtitles[0].classList.add('active');
 
-    let xDiff = xDown - xUp;
-    let yDiff = yDown - yUp;
+    // Change subtitle every 3 seconds
+    setInterval(showNextSubtitle, 3000);
+});
 
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {
-        if (xDiff > 0) {
-            // Swipe left
-            mobileSlider.scrollBy({
-                top: 0,
-                left: 150,
-                behavior: 'smooth'
-            });
-        } else {
-            // Swipe right
-            mobileSlider.scrollBy({
-                top: 0,
-                left: -150,
-                behavior: 'smooth'
-            });
+
+    // Mobile slider touch events
+    const mobileSlider = document.querySelector('.services-slider-mobile');
+    let xDown = null;
+    let yDown = null;
+
+    mobileSlider.addEventListener('touchstart', handleTouchStart, false);
+    mobileSlider.addEventListener('touchmove', handleTouchMove, false);
+
+    function handleTouchStart(event) {
+        const firstTouch = event.touches[0];
+        xDown = firstTouch.clientX;
+        yDown = firstTouch.clientY;
+    }
+
+    function handleTouchMove(event) {
+        if (!xDown || !yDown) {
+            return;
         }
+
+        let xUp = event.touches[0].clientX;
+        let yUp = event.touches[0].clientY;
+
+        let xDiff = xDown - xUp;
+        let yDiff = yDown - yUp;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            if (xDiff > 0) {
+                // Swipe left
+                mobileSlider.scrollBy({
+                    top: 0,
+                    left: 150,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Swipe right
+                mobileSlider.scrollBy({
+                    top: 0,
+                    left: -150,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        xDown = null;
+        yDown = null;
     }
-
-    xDown = null;
-    yDown = null;
-}
-
+});
