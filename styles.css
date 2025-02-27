@@ -1,11 +1,9 @@
-/* Global Styles and Variables */
 :root {
     --primary-color: #1a5f7a;
     --secondary-color: #f4a261;
     --accent-color: #e76f51;
     --text-color: #333;
     --background-color: #f4f4f4;
-    --footer-bg: #2c3e50;
     --white: #ffffff;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -40,167 +38,66 @@ p {
 }
 
 /* Header Styles */
-:root {
-    --white: #ffffff;
-    --blue: #007bff;
-    --text-color: #333;
-    --primary-color: #FF7F00;
-    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-:root {
-    --white: #ffffff;
-    --blue: #007bff;
-    --text-color: #333333;
-    --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 header {
     background-color: var(--white);
     box-shadow: var(--box-shadow);
     position: fixed;
     width: 100%;
     z-index: 1000;
-    transition: all 0.3s ease; 
-}
-
-#home {
-    padding-top: 200px; /* Adjust this value as needed */
-}
-
-.top-bar {
-    background-color: #FFA500;
-    color: var(--white);
-    height: 30px;
-    line-height: 15px;
-    font-size: 18px;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     transition: all 0.3s ease;
 }
 
-.top-bar a {
+header .top-bar {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .top-bar a {
     color: var(--white);
     text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 45px 20px; /* Increased padding */
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease;
+    padding: 20px;
 }
 
-.logo img {
+header .logo img {
     max-height: 50px;
-    transition: all 0.3s ease;
 }
 
-nav ul {
+header nav ul {
     display: flex;
-    justify-content: flex-end;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 
-nav ul li {
+header nav ul li {
     margin-left: 20px;
 }
 
-nav ul li a {
-    position: relative;
+header nav ul li a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: color 0.3s ease;
 }
 
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: orange;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-out;
+header nav ul li a:hover {
+    color: var(--accent-color);
 }
-
-nav ul li a:hover::before {
-    transform: scaleX(1);
-}
-
-nav ul li a:hover {
-    color: orange;
-}
-
-/* Scrolled state styles */
-header.scrolled .top-bar {
-    height: 20px;
-    line-height: 10px;
-    font-size: 16px;
-}
-
-header.scrolled .container {
-    padding: 30px 20px;
-}
-
-header.scrolled .logo img {
-    max-height: 40px;
-}
-
-@media (max-width: 768px) {
-    .top-bar {
-        height: auto;
-        line-height: 1.5;
-        padding: 5px 20px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-
-    nav ul {
-        margin-top: 15px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    /* Mobile scrolled state adjustments */
-    header.scrolled .top-bar {
-        padding: 3px 20px;
-    }
-
-    header.scrolled .container {
-        padding: 20px 20px;
-    }
-}
-
 
 /* Hero Section */
 .hero {
     background-image: url('hero-background.jpg');
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,27 +116,101 @@ header.scrolled .logo img {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.hero-content {
+.hero .hero-content {
     position: relative;
     z-index: 1;
     max-width: 800px;
-    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
-    animation: fadeInUp 1s ease;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    animation: fadeInUp 1s ease 0.2s;
+}
+
+/* Welcome Section */
+.welcome {
+    background-color: var(--white);
+    padding: 80px 0;
+    position: relative;
+}
+
+.welcome .angled-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: var(--white);
+    transform: skewY(-3deg);
+    transform-origin: top left;
+    z-index: 1;
+}
+
+.welcome .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.welcome .welcome-image {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.welcome .welcome-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.welcome .welcome-text {
+    flex: 2;
+}
+
+.welcome h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Services Highlight Section */
+.services-highlight {
+    background-color: var(--secondary-color);
+    padding: 60px 0;
+    color: var(--white);
+}
+
+.services-highlight .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services-highlight .services-list h3 {
+    margin-bottom: 20px;
+}
+
+.services-highlight .services-list ul {
+    list-style-type: none;
+}
+
+.services-highlight .services-list ul li {
+    margin-bottom: 10px;
+}
+
+.services-highlight .services-list ul li::before {
+    content: '✓';
+    margin-right: 10px;
+    color: var(--accent-color);
 }
 
 /* Button Styles */
-.button, .cta-button, .submit-button {
+.cta-button {
     display: inline-block;
     padding: 12px 24px;
     background-color: var(--accent-color);
@@ -248,17 +219,43 @@ header.scrolled .logo img {
     border-radius: 5px;
     transition: all 0.3s ease;
     font-weight: bold;
-    border: none;
-    cursor: pointer;
 }
 
-.button:hover, .cta-button:hover, .submit-button:hover {
-    background-color: var(--secondary-color);
+.cta-button:hover {
+    background-color: var(--primary-color);
     transform: translateY(-2px);
 }
 
-.cta-button {
-    animation: pulse 2s infinite;
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .welcome .container {
+        flex-direction: column;
+    }
+
+    .welcome .welcome-image {
+        margin-bottom: 40px;
+        padding-right: 0;
+    }
+
+    .services-highlight .container {
+        flex-direction: column;
+    }
+
+    .services-highlight .services-list {
+        margin-bottom: 40px;
+    }
 }
 
 /* Services Section */
