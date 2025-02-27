@@ -306,46 +306,6 @@ nav ul li a:hover {
 }
 
 
-/* Existing styles remain the same */
-
-/* Media query for screens smaller than 420px */
-@media screen and (max-width: 420px) {
-    #navbar-content {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .logo img {
-        max-height: 35px;
-        margin-bottom: 10px;
-    }
-
-    .hamburger {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-    }
-
-    .top-bar {
-        font-size: 0.8em;
-        padding: 5px 0;
-    }
-
-    .top-bar > div {
-        margin-bottom: 3px;
-    }
-
-    nav ul li a {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    body {
-        padding-top: 100px; /* Adjust based on your updated navbar height */
-    }
-}
-
 @media screen and (max-width: 320px) {
     #navbar-content {
         padding: 8px;
@@ -527,6 +487,9 @@ section.services-highlight .quote-button .cta-button {
 section.services-highlight .quote-button .cta-button:hover {
     background-color: var(--secondary-color);
 }
+
+/*media query for hero, about, services 1, 2, */ 
+
 
 /* Services Section - Updated for 3 columns */
 /* Services Section - Improved while maintaining layout */
