@@ -186,6 +186,7 @@ section.welcome .welcome-text h2 {
 }
 
 /* Services Highlight Section - Adjusted layout */
+/* Services Highlight Section */
 section.services-highlight {
     background-color: var(--primary-color);
     color: var(--white);
@@ -240,13 +241,34 @@ section.services-highlight .quote-button {
 section.services-highlight .quote-button i {
     font-size: 3rem;
     color: var(--accent-color);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-/* Services Section - Adjusted column sizes */
+section.services-highlight .quote-button .cta-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+section.services-highlight .quote-button .cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Services Section - Updated for 3 columns */
+/* Services Section - Improved while maintaining layout */
 section#services.services {
     padding: 80px 0;
     background-color: #f9f9f9;
+}
+
+section#services.services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 section#services.services h2 {
@@ -265,8 +287,9 @@ section#services.services > p {
 
 section#services.services .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    justify-content: center;
 }
 
 section#services.services .service-card {
@@ -275,11 +298,18 @@ section#services.services .service-card {
     padding: 30px;
     text-align: center;
     box-shadow: var(--box-shadow);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%; /* Ensure full width within the grid cell */
+    max-width: 350px; /* Limit maximum width for larger screens */
 }
 
 section#services.services .service-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 section#services.services .service-card i {
@@ -298,12 +328,14 @@ section#services.services .service-card ul {
     list-style-type: none;
     padding: 0;
     text-align: left;
+    margin-top: auto;
 }
 
 section#services.services .service-card li {
     margin-bottom: 10px;
     padding-left: 20px;
     position: relative;
+    font-size: 0.9rem;
 }
 
 section#services.services .service-card li::before {
@@ -313,110 +345,37 @@ section#services.services .service-card li::before {
     color: var(--accent-color);
 }
 
-/* Features Section */
-section#features.features {
-    padding: 80px 0;
-    background-color: var(--white);
+section#services.services .service-card p {
+    text-align: left;
+    margin-top: auto;
+    font-size: 0.9rem;
 }
 
-section#features.features .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+@media (max-width: 992px) {
+    section#services.services .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-section#features.features .feature-item {
-    text-align: center;
-    padding: 20px;
-}
-
-section#features.features .feature-item i {
-    font-size: 3rem;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-}
-
-section#features.features .feature-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-/* Button Styles */
-.cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: var(--accent-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.cta-button i {
-    margin-right: 10px;
-}
-
-.cta-button:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-    }
-
-    header nav ul {
-        margin-top: 20px;
-    }
-
-    header nav ul li {
-        margin: 0 10px;
-    }
-
-    section.welcome .container {
-        flex-direction: column;
-    }
-
-    section.welcome .welcome-image {
-        margin-bottom: 40px;
-        padding-right: 0;
-    }
-
-    section.services-highlight .container {
-        flex-direction: column;
-    }
-
-    section.services-highlight .services-list {
-        margin-bottom: 40px;
-        padding-right: 0;
-    }
-
-    section.services-highlight .service-items {
-        grid-template-columns: 1fr;
-    }
-
-    section#home.hero .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    section#home.hero .hero-content p {
-        font-size: 1.2rem;
-    }
-
     section#services.services .services-grid {
         grid-template-columns: 1fr;
     }
-
-    section#features.features .feature-grid {
-        grid-template-columns: 1fr;
+    
+    section#services.services .service-card {
+        max-width: 100%; /* Allow full width on small screens */
     }
 }
 
-/* Services Section */
+/* services featured index.html */ 
+
+/* reviews index.html */ 
+
+/* contact section index.html */ 
+
+
+
+/* Services Section Page.html */
 
 .services {
     padding: 50px 0;
