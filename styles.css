@@ -354,6 +354,37 @@ nav ul li a:hover::after {
 }
 
 
+
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 185px; /* Adjusted from 20px to -130px to move it up */
+  right: 22.5px;
+ background-color: #FF9900; /* Slightly darker orange color */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.back-to-top.show {
+  display: block;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 /* Hero Section */
 section#home.hero {
     padding-top: 200px;
