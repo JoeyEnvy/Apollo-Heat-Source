@@ -104,19 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-//hamburger menu toggle
-
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-
-    hamburger.addEventListener('click', function() {
-        menu.classList.toggle('show');
-    });
-});
-
-
 //gallery Index page 
 
 
@@ -207,3 +194,71 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.getElementById('menu');
+    const navbarContent = document.getElementById('navbar-content');
+    const topBar = document.querySelector('.top-bar');
+    const facebookIcon = document.querySelector('.top-bar .facebook-icon'); // Assuming there's a Facebook icon with this class
+
+    // Toggle mobile menu
+    function toggleMenu() {
+        menu.classList.toggle('show');
+        hamburger.classList.toggle('active');
+    }
+
+    // Add click event listener to hamburger menu
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Handle scroll effects
+    function handleScroll() {
+        if (window.scrollY > 30 * window.innerHeight / 100) {
+            navbar.classList.add('scrolled');
+            
+            // Match top bar style with navbar on scroll
+            topBar.style.backgroundColor = getComputedStyle(navbarContent).backgroundColor;
+            topBar.style.opacity = getComputedStyle(navbarContent).opacity;
+            topBar.style.color = getComputedStyle(navbarContent).color;
+        } else {
+            navbar.classList.remove('scrolled');
+            
+            // Reset top bar styles
+            topBar.style.backgroundColor = '';
+            topBar.style.opacity = '';
+            topBar.style.color = '';
+        }
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = menu.contains(event.target) || hamburger.contains(event.target);
+        if (!isClickInside && menu.classList.contains('show')) {
+            toggleMenu();
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Add margin to the right side of the Facebook icon in the top bar
+    if (facebookIcon) {
+        facebookIcon.style.marginRight = '100px';
+    }
+});

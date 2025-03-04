@@ -51,6 +51,17 @@ p {
     transition: all 0.3s ease;
 }
 
+.top-bar :last-child {
+    margin-right: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .top-bar :last-child {
+        margin-right: 0;
+    }
+}
+
+
 .top-bar {
     background-color: var(--primary-color);
     color: var(--white);
@@ -58,6 +69,11 @@ p {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: background-color 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+}
+
+nav ul li:last-child a {
+    margin-right: 100px;
 }
 
 .top-bar a {
@@ -73,15 +89,15 @@ p {
 }
 
 .logo img {
-    max-height: 50px;
-    margin-left: 15px; /* Add some left margin to the logo */
+    max-height: 60px;
+    margin-left: 15px;
 }
 
 nav ul {
     display: flex;
     list-style-type: none;
-    justify-content: flex-end; /* Align links to the right */
-    padding-right: calc(100% - 1920px + 20px); /* Initial padding for 1920px and above */
+    justify-content: flex-end;
+    padding-right: calc(100% - 1920px + 20px);
     padding-left: 50px;
 }
 
@@ -94,31 +110,43 @@ nav ul li a {
     color: var(--text-color);
     font-weight: bold;
     transition: color 0.3s ease;
-    font-size: 16px; /* Initial font size */
-    margin-right: 30px; /* Initial right margin */  
-    
+    font-size: 16px;
+    margin-right: 30px;
+    position: relative;
 }
 
-nav ul li a:hover {
-    color: var(--accent-color);
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
 }
 
 /* Hamburger menu styles */
 .hamburger {
     display: none;
     cursor: pointer;
-    margin-right: 15px; /* Add some right margin */
+    margin-right: 15px;
 }
 
 .hamburger span {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--accent-color); /* Change to orange (accent color) */
+    background-color: var(--accent-color);
     margin: 5px 0;
     transition: all 0.3s ease;
 }
-
 
 @media screen and (max-width: 1919px) {
     nav ul {
@@ -127,15 +155,8 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 1200px) {
-  .navbar-links {
-    padding-right: calc(50px + (100vw - 768px) * 0.1);
-  }
-}
-
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 1024px) {
-    .container {
-        padding: 0 15px;
+    .navbar-links {
+        padding-right: calc(50px + (100vw - 768px) * 0.1);
     }
 }
 
@@ -166,14 +187,11 @@ nav ul li a:hover {
     }
 
     .hamburger {
-        display: block; /* Show hamburger menu */
+        display: block;
         margin-right: 100px;
     }
 
     #navbar-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 15px;
     }
 
@@ -184,97 +202,41 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 768px) {
-        #navbar {
+    #navbar {
         position: absolute;
         top: -10px;
         left: 0;
         right: 0;
     }
 
-    body {
-        padding-top: 120px; /* Adjust based on your navbar height */
-    }
-
     #navbar-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 15px;
     }
 
     .navbar-links {
-    padding-right: 20px;
-
-     }
+        padding-right: 20px;
+    }
 
     .logo img {
-        max-height: 40px;
-        margin-left: 50px; /* Remove left margin on smaller screens */
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        box-shadow: var(--box-shadow);
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 0;
-        text-align: center;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 15px;
+        height: 50px;
+        margin-left: 50px;
+        margin-top: 10px;
     }
 
     .hamburger {
-        display: block; /* Show hamburger menu */
-        cursor: pointer;
         margin-right: 75px;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: var(--accent-color); /* Orange color */
-        margin: 5px 0;
-        transition: all 0.3s ease;
-    }
-
-    .top-bar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .top-bar > div {
-        margin-bottom: 5px;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .top-bar {
-        font-size: 0.9em;
-    }
-
     #navbar-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-.logo img {
-        max-height: 40px; /* Slightly reduce logo size on smaller screens */
+    .logo img {
+        max-height: 40px;
     }
 
     .logo {
@@ -282,8 +244,8 @@ nav ul li a:hover {
     }
 
     .hamburger {
-        position: static;  /* Change this from absolute to static */
-        margin-left: 15px;  /* Add some margin for spacing */
+        position: static;
+        margin-left: 15px;
     }
 }
 
@@ -297,16 +259,9 @@ nav ul li a:hover {
     }
 
     .hamburger {
-        display: block; /* Show hamburger menu */
-        cursor: pointer;
         margin-right: 55px;
     }
-
-    .top-bar {
-        font-size: 0.8em;
-    }
 }
-
 
 @media screen and (max-width: 320px) {
     #navbar-content {
@@ -318,20 +273,15 @@ nav ul li a:hover {
         margin-left: 25px;
     }
 
-    .top-bar {
-        font-size: 0.7em;
-    }
-
     nav ul li a {
         padding: 12px;
     }
 }
 
 
-
-/* Hero Section - Adjusted to move down */
+/* Hero Section */
 section#home.hero {
-    padding-top: 200px; /* Adjust this value based on your header height */
+    padding-top: 200px;
     background-image: url('images/1.webp');
     background-size: cover;
     background-position: center;
@@ -350,6 +300,22 @@ section#home.hero .hero-overlay {
     right: 0;
     bottom: 0;
     background: linear-gradient(to right, rgba(26, 95, 122, 0.8), rgba(26, 95, 122, 0));
+}
+
+section#home.hero .hero-overlay-image {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 35%;
+    z-index: 2;
+}
+
+section#home.hero .hero-overlay-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 section#home.hero .hero-content {
@@ -401,12 +367,20 @@ section.welcome .container {
 section.welcome .welcome-image {
     flex: 1;
     padding-right: 40px;
+    margin-left: 50px;
 }
 
 section.welcome .welcome-image img {
     max-width: 100%;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+section.welcome .welcome-image img:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-color);
 }
 
 section.welcome .welcome-text {
@@ -418,7 +392,6 @@ section.welcome .welcome-text h2 {
     margin-bottom: 20px;
 }
 
-/* Services Highlight Section - Adjusted layout */
 /* Services Highlight Section */
 section.services-highlight {
     background-color: var(--primary-color);
@@ -491,124 +464,121 @@ section.services-highlight .quote-button .cta-button:hover {
     background-color: var(--secondary-color);
 }
 
-/*mediaquery for hero, about, services 1, 2, */ 
+/* Scrolled navbar styles */
+#navbar.scrolled {
+    background-color: rgba(26, 95, 122, 0.9);
+    padding: 10px 0;
+}
 
+#navbar.scrolled .top-bar {
+    opacity: 0.9;
+color: var(--white) !important;
+}
 
-/* 1920px and above (default styles) */
-/* No changes needed, use the original CSS */
+#navbar.scrolled nav ul li a {
+    color: var(--white);
+}
 
-/* 1024px to 1919px */
-@media screen and (max-width: 1919px) {
-    /* Hero Section */
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+    
     section#home.hero .hero-content h1 {
-        font-size: 3rem; /* Slightly reduce hero title size */
+        font-size: 3rem;
     }
     
     section#home.hero .hero-content p {
-        font-size: 1.2rem; /* Slightly reduce hero paragraph size */
+        font-size: 1.2rem;
     }
-
-    /* Welcome Section */
+    
     section.welcome .welcome-image {
-        padding-right: 30px; /* Reduce padding between image and text */
-    }
-
-    /* Services Highlight Section */
-    section.services-highlight .service-items {
-        gap: 15px; /* Reduce gap between service items */
+        margin-left: 30px;
     }
 }
 
-/* 768px to 1023px */
-@media screen and (max-width: 1023px) {
-    /* Hero Section */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-bar > div {
+        margin-bottom: 5px;
+    }
+
     section#home.hero {
-        height: 70vh; /* Reduce hero height */
+        height: 70vh;
     }
 
-    section#home.hero .hero-content {
-        margin-left: 5%; /* Reduce left margin */
+    section#home.hero .hero-overlay-image {
+        max-width: 50%;
     }
 
-    /* Welcome Section */
     section.welcome .container {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column;
     }
 
     section.welcome .welcome-image {
-        padding-right: 0;
-        margin-bottom: 30px; /* Add space between image and text */
-    }
-
-    /* Services Highlight Section */
-    section.services-highlight .container {
-        flex-direction: column; /* Stack services list and quote button vertically */
-    }
-
-    section.services-highlight .services-list {
-        padding-right: 0;
-        margin-bottom: 40px; /* Add space between services list and quote button */
+        margin-left: 0;
+        margin-bottom: 30px;
     }
 }
 
-/* 480px to 767px */
-@media screen and (max-width: 767px) {
-    /* Hero Section */
+@media screen and (max-width: 600px) {
+    .top-bar {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-bar {
+        font-size: 0.8em;
+    }
+
     section#home.hero {
-        padding-top: 150px; /* Reduce top padding */
+        height: 60vh;
     }
 
     section#home.hero .hero-content h1 {
-        font-size: 2.5rem; /* Further reduce hero title size */
+        font-size: 2.5rem;
     }
 
     section#home.hero .hero-content p {
-        font-size: 1rem; /* Further reduce hero paragraph size */
+        font-size: 1rem;
     }
 
-    /* Welcome Section */
+    section#home.hero .hero-overlay-image {
+        max-width: 70%;
+    }
+
     section.welcome {
-        padding: 60px 0; /* Reduce vertical padding */
-    }
-
-    /* Services Highlight Section */
-    section.services-highlight .service-items {
-        grid-template-columns: 1fr; /* Change to single column layout */
+        padding: 60px 0;
     }
 }
 
-/* 320px to 479px */
-@media screen and (max-width: 479px) {
-    /* Hero Section */
-    section#home.hero {
-        height: 60vh; /* Further reduce hero height */
-        padding-top: 120px; /* Further reduce top padding */
+@media screen and (max-width: 320px) {
+    .top-bar {
+        font-size: 0.7em;
     }
 
     section#home.hero .hero-content h1 {
-        font-size: 2rem; /* Smallest hero title size */
+        font-size: 2rem;
     }
 
-    /* Welcome Section */
+    section#home.hero .hero-overlay-image {
+        max-width: 80%;
+    }
+
     section.welcome {
-        padding: 40px 0; /* Smallest vertical padding */
-    }
-
-    section.welcome .angled-divider {
-        height: 50px; /* Reduce angled divider height */
-    }
-
-    /* Services Highlight Section */
-    section.services-highlight {
-        padding: 40px 0; /* Reduce vertical padding */
-    }
-
-    section.services-highlight .quote-button .cta-button {
-        padding: 12px 24px; /* Reduce button padding */
-        font-size: 1rem; /* Reduce button font size */
+        padding: 40px 0;
     }
 }
-
 
 
 
