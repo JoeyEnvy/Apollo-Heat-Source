@@ -195,70 +195,75 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+//navbar hamburger and scroll effects
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Get DOM elements
+    // Select all necessary DOM elements
     const navbar = document.getElementById('navbar');
     const hamburger = document.querySelector('.hamburger');
     const menu = document.getElementById('menu');
     const navbarContent = document.getElementById('navbar-content');
     const topBar = document.querySelector('.top-bar');
-    const facebookIcon = document.querySelector('.top-bar .facebook-icon'); // Assuming there's a Facebook icon with this class
 
-    // Toggle mobile menu
+    // Function to toggle the mobile menu
     function toggleMenu() {
+        // Toggle 'show' class on menu to display/hide it
         menu.classList.toggle('show');
+        // Toggle 'active' class on hamburger for visual feedback
         hamburger.classList.toggle('active');
     }
 
     // Add click event listener to hamburger menu
     hamburger.addEventListener('click', toggleMenu);
 
-    // Handle scroll effects
+    // Function to handle scroll effects
     function handleScroll() {
+        // Check if page has been scrolled more than 30% of viewport height
         if (window.scrollY > 30 * window.innerHeight / 100) {
+            // Add 'scrolled' class to navbar for styling
             navbar.classList.add('scrolled');
             
-            // Match top bar style with navbar on scroll
+            // Match top bar style with navbar content on scroll
             topBar.style.backgroundColor = getComputedStyle(navbarContent).backgroundColor;
             topBar.style.opacity = getComputedStyle(navbarContent).opacity;
             topBar.style.color = getComputedStyle(navbarContent).color;
         } else {
+            // Remove 'scrolled' class when scrolled back to top
             navbar.classList.remove('scrolled');
             
-            // Reset top bar styles
+            // Reset top bar styles to default
             topBar.style.backgroundColor = '';
             topBar.style.opacity = '';
             topBar.style.color = '';
         }
     }
 
-    // Add scroll event listener
+    // Add scroll event listener to window
     window.addEventListener('scroll', handleScroll);
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
+        // Check if click is inside menu or hamburger
         const isClickInside = menu.contains(event.target) || hamburger.contains(event.target);
+        // If click is outside and menu is open, close it
         if (!isClickInside && menu.classList.contains('show')) {
             toggleMenu();
         }
     });
 
-    // Smooth scrolling for anchor links
+    // Implement smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent default anchor behavior
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
+                // Scroll to the target element smoothly
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
             }
         });
     });
-
-    // Add margin to the right side of the Facebook icon in the top bar
-    if (facebookIcon) {
-        facebookIcon.style.marginRight = '100px';
-    }
 });
+
