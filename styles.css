@@ -1083,6 +1083,7 @@ transform: rotate(-45deg) translate(7px, -6px);
 
     /* Hero Section */
     section#home.hero .hero-content h1 {
+        margin-top: -15vh;
         font-size: 2.8rem;
     }
 
@@ -1198,6 +1199,7 @@ transform: rotate(-45deg) translate(7px, -6px);
 
     section#home.hero .hero-content h1 {
         font-size: 2.5rem;
+        margin-top: -30vh;
     }
 
     section#home.hero .hero-content p {
@@ -1947,93 +1949,213 @@ transform: rotate(-45deg) translate(7px, -6px);
 /* ReviewsPage Section */
 
 
-/* Page Header Styles */
-.page-header {
+/* Reviews Page Specific Styles */
+.reviews-page {
+    margin-top: 80px;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.reviews-page__header {
+    background-color: #1a2a3a;
+    color: #ffffff;
     text-align: center;
-    padding: 100px 20px 40px;
-    background-color: var(--primary-color);
-    color: var(--white);
+    padding: 60px 0;
+    margin-bottom: 40px;
 }
 
-.page-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.reviews-page__title {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.8s ease-out;
 }
 
-/* Review Slider Styles */
-.review-slider {
-    padding: 40px 20px;
-}
-
-.slider-container {
-    max-width: 800px;
+.reviews-page__subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
     margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out 0.2s;
+    animation-fill-mode: both;
 }
 
-.slide {
-    background-color: var(--white);
-    padding: 20px;
+/* Slider Styles */
+.reviews-page__slider {
+    background-color: #ffffff;
+    padding: 60px 0;
+    margin-bottom: 60px;
+}
+
+.reviews-page__slider .swiper-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reviews-page__slider .swiper-slide {
+    background-color: #f1f5f9;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reviews-page__slider .swiper-slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.reviews-page__slider .swiper-slide p {
+    font-size: 1.1rem;
+    line-height: 1.6;
     margin-bottom: 20px;
+    color: #333;
 }
 
-/* Reviews Grid Styles */
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
+.reviews-page__slider .reviews-page__reviewer {
+    font-weight: bold;
+    color: #1a2a3a;
+    font-size: 1rem;
 }
 
-.review-card {
-    background-color: var(--white);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: var(--box-shadow);
+/* Grid Styles */
+.reviews-page__grid {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
 }
 
-/* Review Images Styles */
-.review-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px 20px;
-}
-
-.review-images img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Review CTA Styles */
-.review-cta {
+.reviews-page__grid-title {
+    font-size: 2.2rem;
     text-align: center;
-    padding: 60px 20px;
-    background-color: var(--secondary-color);
-    color: var(--white);
+    margin-bottom: 40px;
+    color: #1a2a3a;
 }
 
-.review-cta h2 {
-    font-size: 2rem;
+.reviews-page__grid-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.reviews-page__grid-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reviews-page__grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.reviews-page__grid-content {
+    padding: 25px;
+}
+
+.reviews-page__grid-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #1a2a3a;
+}
+
+.reviews-page__grid-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.reviews-page__grid-reviewer {
+    font-weight: bold;
+    color: #1a2a3a;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.reviews-page__grid-rating {
+    color: #ff6600;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Contact CTA Styles */
+.reviews-page__contact-cta {
+    background-color: #1a2a3a;
+    color: #ffffff;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.reviews-page__contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reviews-page__contact-title {
+    font-size: 2.4rem;
     margin-bottom: 20px;
 }
 
-.review-cta .button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: var(--accent-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+.reviews-page__contact-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
-.review-cta .button:hover {
-    background-color: var(--primary-color);
+.reviews-page__contact-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reviews-page__contact-button:hover {
+    background-color: #e65c00;
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .reviews-page__title {
+        font-size: 2.4rem;
+    }
+
+    .reviews-page__subtitle {
+        font-size: 1.1rem;
+    }
+
+    .reviews-page__grid-title {
+        font-size: 2rem;
+    }
+
+    .reviews-page__contact-title {
+        font-size: 2.2rem;
+    }
+
+    .reviews-page__contact-description {
+        font-size: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
