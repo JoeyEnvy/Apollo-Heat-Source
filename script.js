@@ -288,7 +288,6 @@ backToTopButton.addEventListener("click", () => {
 });
 
 
-
 //reviewspage slider 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -318,3 +317,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
