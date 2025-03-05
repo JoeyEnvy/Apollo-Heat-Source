@@ -1021,9 +1021,9 @@ section#contact.contact .submit-button:hover {
 
     section.welcome .welcome-text {
         text-align: center;
-       width: 100%;
-        padding-right: 150px; /* Added 150px margin on the right */
-        text-align: left; /* Changed to left-align if you prefer */
+        width: 100%;
+        padding-right: 100px; /* Added px margin on the right */
+        text-align: centre; /* Changed to left-align if you prefer */
     }
 
     section#services.services .services-grid {
@@ -1080,54 +1080,43 @@ section#contact.contact .submit-button:hover {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-/* Mobile devices */
-@media screen and (max-width: 480px) {
-    section#home.hero .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    section#home.hero .hero-content p {
-        font-size: 0.9rem;
-    }
-
-    section.welcome .welcome-image {
-        max-width: 100%;
-    }
-
-    section#features.features .feature-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
+    .hamburger {
+     
+        top: 135px;
+        right: 75px;
+        z-index: 1000;
+        margin-right: 0;
     }
 
     .logo img {
-        max-height: 40px;
+        max-height: 50px;
+        padding-bottom: 2.5px;
+        bottom: -20px;
     }
-}
 
-@media screen and (max-width: 768px) {
-    body {
-        padding-top: 120px;
+    /* Top bar styling */
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-bar > div {
+        margin-bottom: 5px;
+        margin-top: 10px;
     }
 
     .top-bar :last-child {
         margin-right: 0;
     }
 
+    /* Navbar styling */
     #navbar {
-        position: absolute;
-        top: -10px;
+        position: fixed; /* Changed to fixed for better scrolling behavior */
+        top: 0;
         left: 0;
         right: 0;
-    }
-
-    body #navbar {
-        position: absolute !important;
-        top: -10px !important;
+        z-index: 1000; /* Ensure navbar stays on top */
     }
 
     #navbar-content {
@@ -1138,25 +1127,22 @@ section#contact.contact .submit-button:hover {
         padding-right: 20px;
     }
 
+    /* Logo styling */
     .logo img {
         height: 50px;
         margin-left: 50px;
         margin-top: 10px;
     }
 
+    /* Hamburger menu styling */
     .hamburger {
-        margin-right: 75px;
+        position: fixed;
+        right: 125px; /* Adjusted for better alignment */
+        top: 175px;
+        z-index: 1001; /* Ensure it's above the navbar */
     }
 
-    .top-bar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .top-bar > div {
-        margin-bottom: 5px;
-    }
-
+    /* Hero section styling */
     section#home.hero {
         height: 70vh;
     }
@@ -1165,6 +1151,7 @@ section#contact.contact .submit-button:hover {
         max-width: 50%;
     }
 
+    /* Welcome section styling */
     section.welcome {
         padding: 60px 0;
     }
@@ -1173,24 +1160,34 @@ section#contact.contact .submit-button:hover {
         max-width: 80%;
     }
 
+    section.welcome .welcome-text {
+        text-align: center; /* Center the welcome paragraph */
+    }
+
+    /* Reviews section styling */
     section#reviews.reviews h2 {
         font-size: 2rem;
     }
     
     section#reviews.reviews .reviews-slider {
-        height: 300px;
+        height: 350px;
     }
 
     section#reviews.reviews .swiper-slide {
-        width: 250px;
+        width: 90%;
+        max-width: 280px;
     }
-    
+
+    section#reviews.reviews .review-card p {
+        font-size: 13px;
+        -webkit-line-clamp: 8;
+        max-height: none; /* Remove fixed height for better responsiveness */
+        overflow: visible; /* Allow text to be fully visible */
+    }
+
+    /* Gallery section styling */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    
-    section#features.features .feature-grid {
-        grid-template-columns: 1fr;
     }
 
     section#gallery.gallery .gallery-grid {
@@ -1202,9 +1199,8 @@ section#contact.contact .submit-button:hover {
         width: 100%;
         max-width: 300px;
     }
-}
 
-@media screen and (max-width: 767px) {
+    /* Services section styling */
     section#services.services {
         padding: 60px 0;
     }
@@ -1221,49 +1217,14 @@ section#contact.contact .submit-button:hover {
         max-width: 100%;
     }
 
+    /* Features section styling */
     section#features.features .feature-grid {
         grid-template-columns: 1fr;
     }
-
-    section#reviews.reviews .reviews-slider {
-        height: 350px;
-    }
-
-    section#reviews.reviews .swiper-slide {
-        width: 90%;
-        max-width: 280px;
-    }
-
-    section#reviews.reviews .review-card p {
-        font-size: 13px;
-        -webkit-line-clamp: 8;
-    }
 }
 
-@media screen and (max-width: 600px) {
-    #navbar-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 
-    .logo img {
-        max-height: 40px;
-    }
 
-    .logo {
-        flex: 1;
-    }
-
-    .hamburger {
-        position: static;
-        margin-left: 15px;
-    }
-
-    .top-bar {
-        font-size: 0.9em;
-    }
-}
 
 @media screen and (max-width: 480px) {
     #navbar-content {
@@ -1275,7 +1236,9 @@ section#contact.contact .submit-button:hover {
     }
 
     .hamburger {
-        margin-right: 55px;
+        margin-right: -35px;
+        margin-top: -22.5px;
+
     }
 
     .top-bar {
