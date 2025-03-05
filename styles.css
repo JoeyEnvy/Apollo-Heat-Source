@@ -772,13 +772,49 @@ section#contact.contact .submit-button:hover {
 /* MediaIndex Queries */
 
 
+/* Large screens (1920px and above) */
+@media screen and (min-width: 1920px) {
+    nav ul {
+        padding-right: 20px;
+    }
+
+    nav ul li:last-child a {
+        margin-right: 200px; /* Increased margin for better visibility */
+    }
+
+    section.welcome .welcome-text {
+        padding-right: 50px;
+    }
+
+    section#home.hero .hero-overlay-image {
+        right: 10%;
+    }
+}
+
 /* Large screens (1651px and above) */
 @media screen and (min-width: 1651px) {
     section#home.hero {
         background-image: url('images/20.webp');
     }
+
+    section#home.hero .hero-overlay-image {
+        right: 15%;
+    }
 }
 
+
+/* Large screens (1651px to 1919px) */
+@media screen and (max-width: 1919px) and (min-width: 1651px) {
+    nav ul {
+       margin-right: calc(100px + (100vw - 1651px) * 0.08); /* Increased base 
+    }
+
+    nav ul li:last-child a {
+        margin-right: calc(80px + (100vw - 1651px) * 0.06); /* Adjusted for better visibility */
+    }
+}
+
+/* Medium to large screens (1025px to 1650px) */
 /* Medium to large screens (1025px to 1650px) */
 @media screen and (max-width: 1650px) and (min-width: 1025px) {
     section#home.hero {
@@ -790,7 +826,39 @@ section#contact.contact .submit-button:hover {
     }
 
     nav ul {
-        padding-right: calc(3% + (100vw - 1024px) * 0.03);
+        padding-right: calc(20px + (100vw - 1025px) * 0.15);
+    }
+
+    nav ul li:last-child a {
+        margin-right: calc(50px + (100vw - 1025px) * 0.15);
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        margin-right: 7.5px;
+    }
+
+    .navbar-links {
+        padding-right: calc(40px + (100vw - 1024px) * 0.1);
+    }
+
+    section.welcome .container {
+        flex-direction: column !important;
+        align-items: center !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+    }
+
+    section.welcome .welcome-image {
+        max-width: 70% !important;
+        margin-right: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+    section.welcome .welcome-text {
+        width: 100% !important;
+        padding-right: 150px !important;
+        text-align: left !important;
     }
 
     section#services.services h2 {
@@ -805,26 +873,12 @@ section#contact.contact .submit-button:hover {
         font-size: 2.8rem;
     }
 
-    .navbar-links {
-        padding-right: calc(30px + (100vw - 1024px) * 0.05);
-    }
-
     section#home.hero .hero-content {
         max-width: 50%;
     }
 
-    section.welcome .container {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    section.welcome .welcome-image {
-        flex: 1;
-        margin-right: 40px;
-    }
-
-    section.welcome .welcome-text {
-        flex: 2;
+    section#home.hero .hero-overlay-image {
+        right: 12%;
     }
 
     .gallery-grid {
@@ -832,10 +886,114 @@ section#contact.contact .submit-button:hover {
     }
 }
 
+
+
+@media screen and (max-width: 1600px) {
+  #navbar-content {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  .navbar-links {
+    margin-left: -200px; /* Use negative margin to move links to the left */
+  }
+
+  nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+    margin-right: 20px;
+  }
+
+  nav ul li:last-child a {
+    margin-right: 0;
+  }
+
+.logo {
+        margin-right: 225px;
+    }
+}
+
+/* navbar multiple queries dynamic move */
+
+   @media screen and (max-width: 1550px) {
+        .logo {
+            margin-right: 175px;
+        }
+    }
+
+    @media screen and (max-width: 1450px) {
+        .logo {
+            margin-right: 125px;
+        }
+    }
+
+    @media screen and (max-width: 1350px) {
+        .logo {
+            margin-right: 100px;
+        }
+    }
+
+    @media screen and (max-width: 1250px) {
+        .logo {
+            margin-right: 75px;
+        }
+    }
+
+
 /* Tablets and smaller desktops (1024px and below) */
 @media screen and (max-width: 1024px) {
     .container {
         padding: 0 20px;
+    }
+
+    #navbar-content {
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.75);
+        padding: 50px 20px;
+        z-index: 999;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li a {
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+    nav ul li:last-child a {
+        margin-right: 15px;
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 68.5px;
+        right: 200px;
+        z-index: 1000;
+        margin-right: 0;
+    }
+
+    .logo img {
+        max-height: 50px;
     }
 
     section#home.hero .hero-content h1 {
@@ -847,8 +1005,7 @@ section#contact.contact .submit-button:hover {
     }
 
     section#home.hero .hero-overlay-image {
-        max-width: 40%;
-        right: 5%;
+        display: none;
     }
 
     section.welcome .container {
@@ -856,13 +1013,17 @@ section#contact.contact .submit-button:hover {
     }
 
     section.welcome .welcome-image {
-        margin: 0 auto 30px;
-        max-width: 80%;
+        max-width: 70%; /* Reduced from 80% to make the image smaller */
+        margin-right: 0;
+        margin-bottom: 40px;
     }
+   
 
     section.welcome .welcome-text {
         text-align: center;
-        width: 100%;
+       width: 100%;
+        padding-right: 150px; /* Added 150px margin on the right */
+        text-align: left; /* Changed to left-align if you prefer */
     }
 
     section#services.services .services-grid {
@@ -885,41 +1046,8 @@ section#contact.contact .submit-button:hover {
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 250px;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.75);
-        padding: 50px 20px;
-        z-index: 999;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        margin-right: 0;
-    }
-
-    #navbar-content {
-        justify-content: space-between;
-    }
-
-    .logo img {
-        max-height: 50px;
-    }
 }
+
 
 /* Larger mobile devices */
 @media screen and (max-width: 768px) {
