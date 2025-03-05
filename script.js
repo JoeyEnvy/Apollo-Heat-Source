@@ -194,9 +194,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-//navbar hamburger and scroll effects
-
 document.addEventListener('DOMContentLoaded', function() {
     // Select all necessary DOM elements
     const navbar = document.getElementById('navbar');
@@ -267,9 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-//back to top 
-
+// Back to top button functionality
 const backToTopButton = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
@@ -287,9 +282,7 @@ backToTopButton.addEventListener("click", () => {
   });
 });
 
-
-//reviewspage slider 
-
+// Reviews page slider
 document.addEventListener('DOMContentLoaded', function() {
     new Swiper('.swiper-container', {
         slidesPerView: 1,
@@ -317,5 +310,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-
