@@ -73,7 +73,9 @@ nav ul li:last-child a {
 .top-bar a {
     color: var(--white);
     text-decoration: none;
+    font-weight: bold; /* Makes text bold */
 }
+
 
 #navbar-content {
     display: flex;
@@ -489,7 +491,7 @@ section#features.features {
 
 section#features.features .feature-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
@@ -508,6 +510,18 @@ section#features.features .feature-item i {
 section#features.features .feature-item h3 {
     color: var(--white);
     margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    section#features.features .feature-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    section#features.features .feature-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 /* Reviews Section */
@@ -1142,6 +1156,7 @@ transform: rotate(-45deg) translate(7px, -6px);
     .top-bar > div {
         margin: 0 5px;
         font-size: 0.9rem; /* Slightly increased font size */
+        
     }
 
     /* Navbar */
