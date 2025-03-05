@@ -1110,6 +1110,7 @@ section#contact.contact .submit-button:hover {
 
     section#home.hero .hero-content p {
         font-size: 1rem;
+        margin-right: 10px; /* Added 10px more margin on the right */
     }
 
     section#home.hero .hero-overlay-image {
@@ -1135,28 +1136,28 @@ section#contact.contact .submit-button:hover {
     }
 
     .hamburger {
-     
-        top: 135px;
+        top: 115px; /* Adjusted to account for decreased nav height */
         right: 75px;
         z-index: 1000;
         margin-right: 0;
     }
 
     .logo img {
-        max-height: 50px;
+        max-height: 40px; /* Decreased logo size */
         padding-bottom: 2.5px;
-        bottom: -20px;
+        bottom: -15px; /* Adjusted to account for smaller logo */
     }
 
     /* Top bar styling */
     .top-bar {
         flex-direction: column;
         align-items: center;
+        padding: 5px 0; /* Decreased padding to reduce height */
     }
 
     .top-bar > div {
-        margin-bottom: 5px;
-        margin-top: 10px;
+        margin-bottom: 3px;
+        margin-top: 3px;
     }
 
     .top-bar :last-child {
@@ -1165,15 +1166,15 @@ section#contact.contact .submit-button:hover {
 
     /* Navbar styling */
     #navbar {
-        position: fixed; /* Changed to fixed for better scrolling behavior */
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        z-index: 1000; /* Ensure navbar stays on top */
+        z-index: 1000;
     }
 
     #navbar-content {
-        padding: 15px;
+        padding: 10px; /* Decreased padding to reduce height */
     }
 
     .navbar-links {
@@ -1182,17 +1183,9 @@ section#contact.contact .submit-button:hover {
 
     /* Logo styling */
     .logo img {
-        height: 50px;
+        height: 40px; /* Decreased logo size */
         margin-left: 50px;
-        margin-top: 10px;
-    }
-
-    /* Hamburger menu styling */
-    .hamburger {
-        position: fixed;
-        right: 125px; /* Adjusted for better alignment */
-        top: 175px;
-        z-index: 1001; /* Ensure it's above the navbar */
+        margin-top: 5px; /* Adjusted for smaller nav */
     }
 
     /* Hero section styling */
@@ -1214,7 +1207,9 @@ section#contact.contact .submit-button:hover {
     }
 
     section.welcome .welcome-text {
-        margin-left: 50px;
+        margin-left: 0; /* Removed left margin */
+        text-align: center; /* Centered text */
+        padding: 0 20px; /* Added padding for better spacing */
     }
 
     /* Reviews section styling */
@@ -1234,8 +1229,8 @@ section#contact.contact .submit-button:hover {
     section#reviews.reviews .review-card p {
         font-size: 13px;
         -webkit-line-clamp: 8;
-        max-height: none; /* Remove fixed height for better responsiveness */
-        overflow: visible; /* Allow text to be fully visible */
+        max-height: none;
+        overflow: visible;
     }
 
     /* Gallery section styling */
@@ -1275,7 +1270,6 @@ section#contact.contact .submit-button:hover {
         grid-template-columns: 1fr;
     }
 }
-
 
 
 
