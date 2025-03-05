@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Responsive behavior
     function handleResponsive() {
-        if (window.innerWidth <= 480) {
+        if (window.innerWidth <= 768) { // Changed from 480 to 768
             galleryGrid.style.display = 'none';
             document.querySelector('.gallery-slider').style.display = 'block';
         } else {
@@ -194,6 +194,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+
+
+
+
+
+
+//navbar scroll and hamburger effects
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Select all necessary DOM elements
     const navbar = document.getElementById('navbar');
@@ -224,6 +237,13 @@ document.addEventListener('DOMContentLoaded', function() {
             topBar.style.backgroundColor = getComputedStyle(navbarContent).backgroundColor;
             topBar.style.opacity = getComputedStyle(navbarContent).opacity;
             topBar.style.color = getComputedStyle(navbarContent).color;
+
+            // Ensure menu stays visible when scrolled
+            if (menu.classList.contains('show')) {
+                menu.style.top = navbar.offsetHeight + 'px';
+                menu.style.backgroundColor = getComputedStyle(navbarContent).backgroundColor;
+                menu.style.color = getComputedStyle(navbarContent).color;
+            }
         } else {
             // Remove 'scrolled' class when scrolled back to top
             navbar.classList.remove('scrolled');
@@ -232,6 +252,11 @@ document.addEventListener('DOMContentLoaded', function() {
             topBar.style.backgroundColor = '';
             topBar.style.opacity = '';
             topBar.style.color = '';
+
+            // Reset menu styles
+            menu.style.top = '';
+            menu.style.backgroundColor = '';
+            menu.style.color = '';
         }
     }
 
@@ -259,10 +284,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
+                // Close menu after clicking a link
+                if (menu.classList.contains('show')) {
+                    toggleMenu();
+                }
             }
         });
     });
 });
+
 
 // Back to top button functionality
 const backToTopButton = document.getElementById("backToTop");

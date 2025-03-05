@@ -948,42 +948,80 @@ section#contact.contact .submit-button:hover {
 
 /* Tablets and smaller desktops (1024px and below) */
 @media screen and (max-width: 1024px) {
+    /* General container adjustment */
     .container {
         padding: 0 20px;
     }
 
-    /* Keep entire navbar fixed at the top */
+    /* Navbar Styles */
     #navbar {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1000;
-        background-color: #fff; /* Ensure background is visible */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     #navbar-content {
         justify-content: space-between;
         padding: 10px 20px;
-        height: 60px; /* Reduced height for a more compact navbar */
+        height: 60px;
     }
 
-    /* Adjust top position to account for fixed navbar this is the navbar background menu for the hamburger  */
+    .logo img {
+        max-height: 40px;
+    }
+
+    /* Hamburger Menu Styles */
+   /* Hamburger Menu Styles */
+.hamburger {
+display: block;
+position: fixed;
+top: 60px;
+right: 75px;
+z-index: 2000;
+cursor: pointer;
+}
+
+.hamburger span {
+display: block;
+width: 25px;
+height: 3px;
+background-color: var(--accent-color);
+margin: 5px 0;
+transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(-45deg) translate(7px, -6px);
+}
+
+    /* Navigation Menu Styles */
     nav ul {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 100px; /* Align with reduced navbar height */
+        top: 60px;
         left: 0;
         width: 100%;
-        height: auto;
+        height: calc(100vh - 60px);
         background-color: #fff;
         padding: 20px 0;
         z-index: 999;
-        opacity: 0.85;
+        opacity: 0.95;
         transition: all 0.3s ease-in-out;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.85);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
     }
 
     nav ul.show {
@@ -1007,48 +1045,12 @@ section#contact.contact .submit-button:hover {
         margin-right: 0;
     }
 
-    /* Adjust hamburger position to 175px from right */
-    .hamburger {
-        display: block;
-        position: absolute;
-        top: 70%;
-        right: 75px; /* Set to 175px as requested */
-        transform: translateY(-50%);
-        z-index: 2000;
-        margin-right: 0;
-        cursor: pointer;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: var(--accent-color);
-        margin: 5px 0;
-        transition: all 0.3s ease;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    .logo img {
-        max-height: 40px;
-    }
-
-    /* Adjust top padding for all sections to account for fixed navbar */
+    /* Section Adjustments */
     section {
-        padding-top: 80px; /* 60px navbar height + 20px extra space */
+        padding-top: 80px;
     }
 
+    /* Hero Section */
     section#home.hero .hero-content h1 {
         font-size: 2.8rem;
     }
@@ -1061,8 +1063,11 @@ section#contact.contact .submit-button:hover {
         display: none;
     }
 
+    /* Welcome Section */
     section.welcome .container {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     section.welcome .welcome-image {
@@ -1072,21 +1077,25 @@ section#contact.contact .submit-button:hover {
     }
 
     section.welcome .welcome-text {
-        text-align: center;
         width: 100%;
-        padding-right: 175px;
-        padding-left: 20px;
+        padding-right: 0;
+        padding-left: 0;
+        max-width: 600px;
     }
 
+    /* Services Section */
     section#services.services .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        justify-items: center;
     }
 
+    /* Features Section */
     section#features.features .feature-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Reviews Section */
     section#reviews.reviews .reviews-slider {
         height: 280px;
     }
@@ -1095,11 +1104,11 @@ section#contact.contact .submit-button:hover {
         width: 280px;
     }
 
+    /* Gallery Section */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 
 
 /* Larger mobile devices */
@@ -1141,7 +1150,7 @@ section#contact.contact .submit-button:hover {
     .hamburger {
         position: fixed;
         right: 20px;
-        top: 60px; /* Adjusted for new navbar position */
+        top: 45px; /* Adjusted for new navbar position */
         z-index: 1001;
     }
 
@@ -1286,7 +1295,7 @@ section#contact.contact .submit-button:hover {
 
     .hamburger {
         right: 15px;
-        top: 50px;
+        top: 35px;
     }
 
     /* Adjust hero section to account for the header */
@@ -1339,7 +1348,7 @@ section#contact.contact .submit-button:hover {
 
     .hamburger {
         right: 10px;
-        top: 60px;
+        top: 45px;
     }
 
     /* Hero Section */
