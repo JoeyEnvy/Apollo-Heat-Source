@@ -241,8 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ensure menu stays visible when scrolled
             if (menu.classList.contains('show')) {
                 menu.style.top = navbar.offsetHeight + 'px';
-                menu.style.backgroundColor = getComputedStyle(navbarContent).backgroundColor;
-                menu.style.color = getComputedStyle(navbarContent).color;
+                // Removed: menu.style.backgroundColor and menu.style.color
             }
         } else {
             // Remove 'scrolled' class when scrolled back to top
@@ -255,8 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Reset menu styles
             menu.style.top = '';
-            menu.style.backgroundColor = '';
-            menu.style.color = '';
+            // Removed: menu.style.backgroundColor and menu.style.color
         }
     }
 
