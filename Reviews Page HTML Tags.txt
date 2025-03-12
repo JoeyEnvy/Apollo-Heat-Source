@@ -1,0 +1,55 @@
+    <section class="reviews-intro">
+        <div class="reviews-intro__container">
+            <div class="reviews-intro__content">
+                <h1>Trusted Heating Experts in South Yorkshire</h1>
+                <p>For over 15 years, Apollo Heatsource has been providing professional heating solutions to homes and businesses across Doncaster, Mexborough, and South Yorkshire. Our certified technicians combine technical expertise with exceptional customer service, ensuring every installation meets the highest safety and quality standards.</p>
+            </div>
+               </div>
+            <img src="images/33.webp" alt="Our team at work" class="reviews-intro__image">
+        </div>
+    </section>
+
+
+ <section class="reviews-grid">
+
+<div class="reviews-page__grid-item">
+
+
+                    <div class="reviews-page__grid-content">
+
+<section class="image-gallery">
+    <div class="container">
+        <h2>Our Recent Projects</h2>
+        <div class="gallery-grid">
+<section class="cta-section">
+        <div class="container">
+            <h3>Ready for a Warmer Home?</h3>
+            <p>Book your free consultation today and get a personalized quote</p>
+            <a href="#contact" class="cta-button">Schedule Consultation</a>
+        </div>
+    </section>
+<section class="reviews-slider">
+        <div class="container">
+            <h2>Recent Customer Experiences</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p>"Chris and Jake did such a fab job of fitting our new log burner. They removed the old gas fire with false breast, built a brand new chimney breast, and fitted in our new log burner. This included twin wall flue, tiling, beam with lights, and slate hearth. They were professional and worked super hard all week even in the snow! Would definitely recommend to anyone!"</p>
+                        <span class="reviews-page__reviewer">- Stacey Butler</span>
+                    </div>
+                    <div class="swiper-slide">
+
+
+<section class="additional-gallery">
+
+ <section class="review-cta">
+        <div class="container">
+            <h2>Love your new stove or fireplace? Let us know!</h2>
+            <p>Your feedback helps us improve and lets others know about our service.</p>
+            <a href="https://g.page/apolloheatsource/review" class="cta-button">Write a Review</a>
+        </div>
+    </section>
+
+    <!-- Testimonial Highlight -->
+<section class="testimonial-highlight">
+
