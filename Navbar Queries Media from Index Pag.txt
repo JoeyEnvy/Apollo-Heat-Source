@@ -1,0 +1,304 @@
+Navbar Queries Media from Index Page 
+
+----------------------------------------
+
+/* Navbar and Top Bar Queries */
+
+/* Large screens (1920px and above) */
+@media screen and (min-width: 1920px) {
+    nav ul {
+        padding-right: 20px;
+    }
+
+    nav ul li:last-child a {
+        margin-right: 200px;
+    }
+}
+
+/* Large screens (1651px to 1919px) */
+@media screen and (max-width: 1919px) and (min-width: 1651px) {
+    nav ul {
+        margin-right: calc(100px + (100vw - 1651px) * 0.08);
+    }
+
+    nav ul li:last-child a {
+        margin-right: calc(80px + (100vw - 1651px) * 0.06);
+    }
+}
+
+/* Medium to large screens (1025px to 1650px) */
+@media screen and (max-width: 1650px) and (min-width: 1025px) {
+    nav ul {
+        padding-right: calc(20px + (100vw - 1025px) * 0.15);
+    }
+
+    nav ul li:last-child a {
+        margin-right: calc(50px + (100vw - 1025px) * 0.15);
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        margin-right: 7.5px;
+    }
+
+    .navbar-links {
+        padding-right: calc(40px + (100vw - 1024px) * 0.1);
+    }
+}
+
+/* Medium screens (1600px and below) */
+@media screen and (max-width: 1600px) {
+    #navbar-content {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+
+    .navbar-links {
+        margin-left: -200px;
+    }
+
+    nav ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+        margin-right: 20px;
+    }
+
+    nav ul li:last-child a {
+        margin-right: 0;
+    }
+
+    .logo {
+        margin-right: 225px;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .logo {
+        margin-right: 175px;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .logo {
+        margin-right: 125px;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .logo {
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .logo {
+        margin-right: 75px;
+    }
+}
+
+/* Tablets and smaller desktops (1024px and below) */
+@media screen and (max-width: 1024px) {
+    #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #navbar-content {
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: 60px;
+    }
+
+    .logo img {
+        max-height: 40px;
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 60px;
+        right: 75px;
+        z-index: 2000;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+    }
+}
+
+/* Larger mobile devices */
+@media screen and (max-width: 768px) {
+    .top-bar {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px 0;
+        height: 35px;
+    }
+
+    .top-bar > div {
+        margin: 0 5px;
+        font-size: 0.9rem;
+    }
+
+    #navbar {
+        position: fixed;
+        top: 35px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    #navbar-content {
+        padding: 8px 5px;
+        height: 50px;
+    }
+
+    .logo img {
+        height: 35px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .hamburger {
+        position: fixed;
+        right: 20px;
+        top: 45px;
+        z-index: 1001;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .top-bar {
+        height: 28px;
+        padding: 4px 0;
+        padding-left: 7.5px;
+    }
+
+    .top-bar > div {
+        font-size: 0.8rem;
+        margin: 0 4px;
+    }
+
+    #navbar {
+        top: 28px;
+    }
+
+    #navbar-content {
+        padding: 8px 5px;
+        height: 48px;
+    }
+
+    .logo img {
+        max-height: 38px;
+        margin-left: 8px;
+        margin-top: 4px;
+    }
+
+    .hamburger {
+        right: 15px;
+        top: 35px;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-bar {
+        height: 35px;
+        padding: 7px 0;
+        justify-content: space-between;
+        padding-left: 25px;
+    }
+
+    .top-bar > div {
+        font-size: 0.75rem;
+        margin: 0 5px;
+    }
+
+    .top-bar > div:nth-child(2) {
+        display: none;
+    }
+
+    #navbar {
+        top: 35px;
+    }
+
+    #navbar-content {
+        padding: 10px 5px;
+        height: 55px;
+    }
+
+    .logo img {
+        max-height: 40px;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    .hamburger {
+        right: 10px;
+        top: 45px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .top-bar {
+        height: 30px;
+        padding: 5px 0;
+        justify-content: space-between;
+        padding-left: 15px;
+        font-size: 0.7em;
+    }
+
+    .top-bar > div {
+        margin: 0 3px;
+    }
+
+    .top-bar > div:nth-child(2) {
+        display: none;
+    }
+
+    #navbar {
+        top: 30px;
+    }
+
+    #navbar-content {
+        padding: 8px 5px;
+        height: 45px;
+    }
+
+    .logo img {
+        max-height: 35px;
+        margin-left: 15px;
+        margin-top: 3px;
+    }
+
+    .hamburger {
+        right: 8px;
+        top: 40px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+}
