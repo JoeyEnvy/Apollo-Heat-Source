@@ -537,26 +537,40 @@
 
 
 <script>
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevents redirection
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
 
-        const form = event.target;
-        const formData = new FormData(form);
+    const form = event.target;
+    const formData = new FormData(form);
 
-        fetch("https://formsubmit.co/ajax/joemortnvs@gmail.com", {
+    // Add multiple recipients
+    const recipients = ["joemortnvs@gmail.com", "apollo-heatsource@hotmail.com"];
+    const promises = recipients.map(email => {
+        return fetch(`https://formsubmit.co/ajax/${email}`, {
             method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                form.reset(); // Clears form
-                document.querySelector(".submit-button").style.display = "none";
-                document.getElementById("thank-you-message").classList.remove("hidden");
+            body: formData,
+        });
+    });
+
+    // Handle all submissions
+    Promise.all(promises)
+        .then(responses => Promise.all(responses.map(res => res.json())))
+        .then(results => {
+            const allSuccessful = results.every(result => result.success);
+            if (allSuccessful) {
+                form.reset(); // Clear the form
+                document.querySelector(".submit-button").style.display = "none"; // Hide button
+                document.getElementById("thank-you-message").classList.remove("hidden"); // Show thank-you message
+            } else {
+                throw new Error("One or more submissions failed");
             }
         })
-        .catch(error => console.error("Error:", error));
-    });
+        .catch(error => {
+            console.error("Error:", error);
+            document.getElementById("error-message").classList.remove("hidden"); // Show error message
+        });
+});
+
 </script>
 
 
