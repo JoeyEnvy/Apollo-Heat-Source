@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Reviews | Apollo Heat Source</title>
-    <meta name="description" content="Read what our satisfied customers have to say about Apollo Heat Source's expert stove and fireplace services.">
+    <meta name="description" content="See why customers trust Apollo Heat Source for expert wood-burning stove and fireplace services in Doncaster and Mexborough. Read real reviews from satisfied clients.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Apollo Heat Source reviews, customer testimonials, woodburning stove reviews, fireplace installation feedback, Doncaster heating services">
+    <meta name="author" content="Apollo Heat Source">
+    
+    <!-- Open Graph for Facebook -->
+    <meta property="og:title" content="Customer Reviews | Apollo Heat Source">
+    <meta property="og:description" content="Discover why customers recommend Apollo Heat Source for top-quality fireplace and stove installations in Doncaster and Mexborough.">
+    <meta property="og:image" content="images/JUST_LOGO_NO_WRITING.png">
+    <meta property="og:url" content="https://apolloheatsource.co.uk/reviews.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Customer Reviews | Apollo Heat Source">
+    <meta name="twitter:description" content="Top-rated fireplace and stove services in Doncaster & Mexborough. Read our customer testimonials.">
+    <meta name="twitter:image" content="images/JUST_LOGO_NO_WRITING.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/apollo_favicon.png" type="image/png">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- JavaScript for Logo Swap on Scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbarLogo = document.getElementById("navbar-logo");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 50) {
+                    navbarLogo.src = "images/APOLLO_JUST_WHITE_WRITING.png";
+                } else {
+                    navbarLogo.src = "images/Logo_side_ways.png";
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <header id="navbar">
@@ -23,7 +60,7 @@
     </div>
     <div class="container" id="navbar-content">
         <div class="logo">
-            <img src="images/Logo.png" alt="Apollo Heat Source Logo">
+            <img id="navbar-logo" src="images/Logo_side_ways.png" alt="Apollo Heat Source Logo">
         </div>
         <nav>
             <ul id="menu">
@@ -42,6 +79,7 @@
         </div>
     </div>
 </header>
+
 
 <main class="reviews-page">
     <section class="reviews-page__header">
@@ -291,7 +329,7 @@
     </div>
     <div class="footer-bottom">
         <p>&copy; 2025 Apollo Heat Source. All rights reserved.</p>
-        <p>HETAS Registered | Gas Safe Registered</p>
+        <p>HETAS Registered | Solid Fuel Appliances | Chimneys</p>
     </div>
 </footer>
 

@@ -5,9 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apollo Heat Source | Expert Woodburning Stove & Fireplace Services</title>
     <meta name="description" content="Apollo Heat Source offers professional woodburning stove and fireplace services in Doncaster and Mexborough. HETAS registered for quality installations and maintenance.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="woodburning stoves, fireplaces, stove installation, HETAS registered, fireplace maintenance, Doncaster, Mexborough, Apollo Heat Source">
+    <meta name="author" content="Apollo Heat Source">
+    
+    <!-- Open Graph for Facebook -->
+    <meta property="og:title" content="Apollo Heat Source | Woodburning Stove & Fireplace Experts">
+    <meta property="og:description" content="Professional woodburning stove and fireplace services in Doncaster and Mexborough.">
+    <meta property="og:image" content="images/JUST LOGO NO WRITING.png">
+    <meta property="og:url" content="https://apolloheatsource.co.uk">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Apollo Heat Source | Woodburning Stove & Fireplace Experts">
+    <meta name="twitter:description" content="Top-rated woodburning stove and fireplace services in Doncaster & Mexborough.">
+    <meta name="twitter:image" content="images/JUST LOGO NO WRITING.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/apollo favicon.png" type="image/png">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- JavaScript for Logo Swap on Scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbarLogo = document.getElementById("navbar-logo");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 50) {
+                    navbarLogo.src = "images/APOLLO JUST WHITE WRITING.png";
+                } else {
+                    navbarLogo.src = "images/Logo side ways.png";
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -25,18 +61,20 @@
     </div>
     <div class="container" id="navbar-content">
         <div class="logo">
-            <img src="images/Logo.png" alt="Apollo Heat Source Logo">
+            <img id="navbar-logo" src="images/Logo side ways.png" alt="Apollo Heat Source Logo">
         </div>
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="services.html"><i class="fas fa-tools"></i> Services</a></li>
-                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="reviews.html"><i class="fas fa-star"></i> Reviews</a></li>
-                <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-        </nav>
+<nav>
+    <ul id="menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
+        <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="reviews.html"><i class="fas fa-star"></i> Reviews</a></li>
+        <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+</nav>
+
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -44,7 +82,6 @@
         </div>
     </div>
 </header>
-
 
     <main>
 <section id="home" class="hero">
@@ -133,51 +170,76 @@
         
         <div class="services-grid">
             <div class="service-card">
-                <i class="fas fa-fire fa-3x"></i>
-                <h3>Flue Liner Installation</h3>
-                <ul>
-                    <li>Flexible Metal Flue Liner</li>
-                    <li>Non-Metallic Block or Sectional Liner</li>
-                    <li>Rigid Sectional Metal Liner</li>
-                </ul>
-            </div>
-            <div class="service-card">
                 <i class="fas fa-home fa-3x"></i>
                 <h3>Stove and Heater Installation</h3>
                 <ul>
-                    <li>Pellet Dry Stove</li>
-                    <li>Solid Fuel or Multifuel Dry Room Heater</li>
-                    <li>Wood-Only Dry Room Heater</li>
+                    <li>✅️ Expert installation of wood-burning and multi-fuel stoves</li>
+                    <li>✅️ Pellet stove installation for efficient heating</li>
+                    <li>✅️ Safe and regulation-compliant fitting</li>
+                    <li>✅️ Custom solutions for homes of all sizes</li>
                 </ul>
             </div>
-<div class="service-card">
-    <i class="fas fa-house-chimney fa-3x"></i>
-    <h3>Chimney Systems</h3>
-    <ul>
-        <li>External Factory-Made Chimney</li>
-        <li>Internal Factory-Made Chimney</li>
-        <li>Open Fire Installation</li>
-    </ul>
-</div>
-
+            
             <div class="service-card">
                 <i class="fas fa-tools fa-3x"></i>
                 <h3>Service and Maintenance</h3>
-                <p>Regular servicing for optimal performance and safety of your heating system.</p>
+                <ul>
+                    <li>✅️ Regular servicing to keep your heating system at peak efficiency</li>
+                    <li>✅️ Safety inspections for compliance and peace of mind</li>
+                    <li>✅️ Repairs and adjustments to prolong the lifespan of your appliance</li>
+                    <li>✅️ Flue and ventilation checks to ensure optimal performance</li>
+                </ul>
             </div>
+
+            <div class="service-card">
+                <i class="fas fa-house-chimney fa-3x"></i>
+                <h3>Chimney Systems</h3>
+                <ul>
+                    <li>✅️ Flexible flue lining</li>
+                    <li>✅️ External Twin Wall Flue Systems</li>
+                    <li>✅️ Internal Twin Wall Flue Systems</li>
+                    <li>✅️ Chimney pot and cowl fitting</li>
+                    <li>✅️ Chimney stack repair and re-pointing</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-fire fa-3x"></i>
+                <h3>Solid Fuel Appliances</h3>
+                <ul>
+                    <li>✅️ Installation of solid fuel cookers and boilers</li>
+                    <li>✅️ Maintenance and servicing of solid fuel appliances</li>
+                    <li>✅️ Advice on fuel types and efficiency</li>
+                    <li>✅️ Safe installation in compliance with regulations</li>
+                </ul>
+            </div>
+
             <div class="service-card">
                 <i class="fas fa-broom fa-3x"></i>
                 <h3>Sweeps & Service</h3>
-                <p>Professional chimney sweeping and maintenance services.</p>
+                <ul>
+                    <li>✅️ Professional chimney sweeping</li>
+                    <li>✅️ Blockage removal for better ventilation</li>
+                    <li>✅️ Camera inspections for hidden issues</li>
+                    <li>✅️ Regular maintenance to prevent hazards</li>
+                </ul>
             </div>
+            
             <div class="service-card">
                 <i class="fas fa-paint-roller fa-3x"></i>
                 <h3>Plastering</h3>
-                <p>High-quality plastering services for your fireplace surrounds.</p>
+                <ul>
+                    <li>✅️ High-quality plastering for fireplace surrounds</li>
+                    <li>✅️ Restoration of old and damaged chimney breasts</li>
+                    <li>✅️ Smooth finishes for a modern look</li>
+                    <li>✅️ Custom plastering solutions to match your decor</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <section id="features" class="features">
     <div class="container">
@@ -291,17 +353,206 @@
 
 
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <form action="submit-form.php" method="POST" class="contact-form">
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-wrapper">
+            <!-- Contact Form and Facebook Embed side by side -->
+            <div class="form-and-facebook">
+                <form id="contact-form" class="contact-form">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" placeholder="Your Message" required></textarea>
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
+
+                <div class="facebook-embed">
+                    <iframe 
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FApolloheatsource&tabs=timeline&width=400&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                        width="100%" height="450" 
+                        style="border: 5px solid #ddd; border-radius: 10px;" 
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
             </div>
+
+            <!-- Thank You Message (Initially Hidden) -->
+            <div id="thank-you-message" class="hidden">
+                <p>Thank you for your message, we'll be with you soon.</p>
+                <p>Or call us here at <strong>07941 338 659</strong></p>
+            </div>
+        </div>
+
+        <!-- Google Maps Embed -->
+        <section class="map-section">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2366.2834893785166!2d-1.1720899233769752!3d53.61307997280778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48790b0c3a3a3b6f%3A0x7f7d9f4f7f9f7f9f!2s118%20Watch%20House%20Ln%2C%20Doncaster%20DN5%209LT%2C%20UK!5e0!3m2!1sen!2sus!4v1645890000000!5m2!1sen!2sus" 
+                width="80%" height="400" 
+                style="border: 5px solid orange; border-radius: 10px;" 
+                allowfullscreen="" loading="lazy">
+            </iframe>
         </section>
+
+        <!-- FAQ Section -->
+<section id="faq" class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> What areas do you serve?</h3>
+        <div class="faq-answer">
+            <p>We primarily serve Doncaster, Mexborough, and the surrounding areas in South Yorkshire. Our service area includes:</p>
+            <ul>
+                <li>Doncaster</li>
+                <li>Mexborough</li>
+                <li>Rotherham</li>
+                <li>Sheffield (selected areas)</li>
+                <li>Barnsley</li>
+            </ul>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> Are you HETAS registered?</h3>
+        <div class="faq-answer">
+            <p>Yes, we are proud to be HETAS registered, ensuring all our installations meet the highest safety and quality standards. This means:</p>
+            <ul>
+                <li>Our technicians are fully trained and certified</li>
+                <li>We follow strict safety guidelines</li>
+                <li>Our work is regularly inspected and approved</li>
+            </ul>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> How often should I have my chimney swept?</h3>
+        <div class="faq-answer">
+            <p>We recommend having your chimney swept at least once a year, or more frequently if you use your fireplace or stove regularly. Here's a general guide:</p>
+            <ul>
+                <li>Wood burning: At least once per season of use</li>
+                <li>Coal burning: At least twice per season of use</li>
+                <li>Oil or gas: Once a year</li>
+                <li>Pellet stoves: Once a year</li>
+            </ul>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> Do you offer warranties on your installations?</h3>
+        <div class="faq-answer">
+            <p>Yes, we offer warranties on all our installations. The duration may vary depending on the product and type of installation:</p>
+            <ul>
+                <li>Stove installations: 5-year warranty</li>
+                <li>Fireplace installations: 2-year warranty</li>
+                <li>Chimney linings: 10-year warranty</li>
+                <li>Parts and labor: 1-year warranty</li>
+            </ul>
+            <p>Extended warranties are available for purchase.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> How long does a typical installation take?</h3>
+        <div class="faq-answer">
+            <p>Installation times can vary depending on the complexity of the project. Here are some general timeframes:</p>
+            <ul>
+                <li>Simple stove installation: 1 day</li>
+                <li>Fireplace installation: 2-3 days</li>
+                <li>Chimney lining: 1-2 days</li>
+                <li>Complete fireplace renovation: 3-5 days</li>
+            </ul>
+            <p>We'll provide a more accurate timeline during your consultation.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> Do you offer free quotes?</h3>
+        <div class="faq-answer">
+            <p>Yes, we offer free, no-obligation quotes for all our services. Our quote process includes:</p>
+            <ul>
+                <li>Initial phone consultation</li>
+                <li>On-site assessment (if necessary)</li>
+                <li>Detailed written quote</li>
+                <li>Product recommendations</li>
+            </ul>
+            <p>Contact us to arrange your free consultation and quote.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> What types of heating systems do you install?</h3>
+        <div class="faq-answer">
+            <p>We install a wide range of heating systems including:</p>
+            <ul>
+                <li>Wood-burning stoves</li>
+                <li>Multi-fuel stoves</li>
+                <li>Gas fireplaces</li>
+                <li>Electric fireplaces</li>
+                <li>Pellet stoves</li>
+                <li>Open fireplaces</li>
+                <li>Fireplace inserts</li>
+            </ul>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> Can you help with fireplace design and renovation?</h3>
+        <div class="faq-answer">
+            <p>Absolutely! We offer comprehensive fireplace design and renovation services to help you create the perfect focal point for your home. Our services include:</p>
+            <ul>
+                <li>Custom fireplace design</li>
+                <li>Fireplace surround installation</li>
+                <li>Hearth construction or renovation</li>
+                <li>Chimney breast alterations</li>
+                <li>Integration with existing décor</li>
+            </ul>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> Do you provide maintenance services for existing installations?</h3>
+        <div class="faq-answer">
+            <p>Yes, we offer maintenance and repair services for existing fireplaces and stoves to ensure they continue to operate safely and efficiently. Our maintenance services include:</p>
+            <ul>
+                <li>Annual safety inspections</li>
+                <li>Chimney sweeping</li>
+                <li>Stove and fireplace repairs</li>
+                <li>Replacement of worn parts</li>
+                <li>Efficiency assessments</li>
+            </ul>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3><i class="fas fa-plus"></i> What safety measures do you follow during installations?</h3>
+        <div class="faq-answer">
+            <p>We adhere to all relevant safety regulations and best practices. Our safety measures include:</p>
+            <ul>
+                <li>Full compliance with Building Regulations</li>
+                <li>Use of proper protective equipment</li>
+                <li>Thorough testing of all installations</li>
+                <li>Provision of carbon monoxide detectors</li>
+                <li>Detailed safety instructions for customers</li>
+            </ul>
+            <p>Our team is fully trained and certified, and we ensure all installations meet or exceed current safety standards.</p>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevents redirection
+
+        const form = event.target;
+        const formData = new FormData(form);
+
+        fetch("https://formsubmit.co/ajax/joemortnvs@gmail.com", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                form.reset(); // Clears form
+                document.querySelector(".submit-button").style.display = "none";
+                document.getElementById("thank-you-message").classList.remove("hidden");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
+
     </main>
 
 <footer>
@@ -337,7 +588,7 @@
     </div>
     <div class="footer-bottom">
         <p>&copy; 2025 Apollo Heat Source. All rights reserved.</p>
-        <p>HETAS Registered | Gas Safe Registered</p>
+        <p>HETAS Registered | Solid Fuel Appliances | Chimneys</p>
     </div>
 </footer>
 
