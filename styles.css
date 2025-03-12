@@ -554,6 +554,29 @@ section#features.features .feature-item .hetas-link:hover {
     color: var(--secondary-color);
 }
 
+.view-work-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-work-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.view-work-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
 
 
 @media (min-width: 768px) {
