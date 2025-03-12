@@ -512,6 +512,46 @@ section#features.features .feature-item h3 {
     margin-bottom: 15px;
 }
 
+section#features.features .feature-item .useful-info {
+    font-weight: bold;
+    margin-top: 15px;
+    color: var(--secondary-color);
+}
+
+section#features.features .feature-item .sia-link {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+section#features.features .feature-item .sia-link:hover {
+    background-color: var(--white);
+    color: var(--secondary-color);
+}
+
+section#features.features .feature-item .hetas-link {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+section#features.features .feature-item .hetas-link:hover {
+    background-color: var(--white);
+    color: var(--secondary-color);
+}
+
+
+
 @media (min-width: 768px) {
     section#features.features .feature-grid {
         grid-template-columns: repeat(4, 1fr);
