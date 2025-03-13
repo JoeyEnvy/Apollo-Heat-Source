@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryItem.innerHTML = `
             <img src="${src}" alt="Gallery image ${index + 1}">
             <div class="overlay">
-                <a href="services.html" class="view-more-btn">View More</a>
+                <a href="gallery.html" class="view-more-btn">View More</a>
             </div>
         `;
         galleryGrid.appendChild(galleryItem);
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="slider-item">
                 <img src="${images[currentSlide]}" alt="Gallery image ${currentSlide + 1}">
                 <div class="overlay">
-                    <a href="services.html" class="view-more-btn">View More</a>
+                    <a href="gallery.html" class="view-more-btn">View More</a>
                 </div>
             </div>
         `;
@@ -193,12 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSlider();
     }
 });
-
-
-
-
-
-
 
 
 //navbar scroll and hamburger effects
