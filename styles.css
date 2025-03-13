@@ -803,6 +803,7 @@ section#gallery.gallery .gallery-item:hover .overlay {
 
 /* Contact Section */
 
+/* Contact Section */
 section#contact.contact {
     padding: 60px 0;
     background-color: var(--background-color);
@@ -815,7 +816,7 @@ section#contact.contact h2 {
     font-size: 2.5rem;
 }
 
-/* Contact Form and Facebook Embed Wrapper */
+/* Contact Wrapper */
 .contact-wrapper {
     display: flex;
     flex-direction: column;
@@ -887,29 +888,11 @@ section#contact.contact h2 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Loading Spinner */
-#contact-form #loading-spinner {
-    display: none !important;
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-top: 4px solid var(--primary-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1001 !important;
-}
-
-@keyframes spin {
-    from { transform: translateX(-50%) rotate(0deg); }
-    to { transform: translateX(-50%) rotate(360deg); }
-}
-
-#contact-form #loading-spinner:not(.hidden) {
-    display: block !important;
+/* Form Container */
+.form-container {
+    flex: 2;
+    position: relative;
+    padding-bottom: 150px; /* Added padding to make room for moved elements */
 }
 
 /* Utility Class for Hidden Elements */
@@ -917,45 +900,176 @@ section#contact.contact h2 {
     display: none !important;
 }
 
-/* Form Container */
-.form-container {
-    flex: 2;
-    position: relative;
-    padding-bottom: 60px; /* Add space for the thank-you message */
+/* Aesthetic Elements */
+
+/* Loading Spinner */
+#contact-form #loading-spinner {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    bottom: -70px; /* Moved further down */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+}
+
+@keyframes spin {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+#contact-form #loading-spinner:not(.hidden) {
+    display: block;
 }
 
 /* Thank You Message */
-#contact-form #thank-you-message {
-    display: none !important;
-    position: absolute;
-    bottom: -60px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: var(--white);
-    border: 2px solid var(--primary-color);
-    border-top: none;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    color: var(--primary-color);
-    z-index: 1001 !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+/* Thank You Message - Default Styles (Desktop) */
+#thank-you-message {
+    display: none; /* Initially hidden */
+    position: absolute; /* Positioned relative to its nearest positioned ancestor */
+    bottom: -50px; /* Move it down below the form */
+    left: 40%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust centering */
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Limit maximum width */
+    background-color: var(--accent-color); /* Background color for visibility */
+    color: var(--white); /* Text color for contrast */
+    border: none; /* Remove any borders */
+    border-radius: 15px; /* Rounded corners for aesthetics */
+    padding: 20px; /* Add spacing inside the box */
+    text-align: center; /* Center-align text */
+    z-index: 1001; /* Ensure it appears above other elements */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
 }
 
-#contact-form #thank-you-message p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+#thank-you-message p {
+    font-size: 1.2rem; /* Increase font size for readability */
+    margin-bottom: 10px; /* Add spacing between paragraphs */
 }
 
-#contact-form #thank-you-message strong {
-    color: var(--accent-color);
+#thank-you-message strong {
+    color: var(--primary-color); /* Highlight important text with primary color */
+    font-size: 1.3rem; /* Make the phone number more prominent */
 }
 
-#contact-form #thank-you-message:not(.hidden) {
-    display: block !important;
+/* Show Thank You Message when not hidden */
+#thank-you-message:not(.hidden) {
+    display: block !important; /* Force it to display when not hidden */
 }
+
+/* Media Queries */
+
+/* For Large Screens (1650px and below) */
+@media (max-width: 1650px) {
+    #thank-you-message {
+        bottom: -50px; /* Maintain default position */
+        left: 40%; /* Maintain default centering */
+        width: 90%; /* Maintain default width */
+        max-width: 400px; /* Maintain default max width */
+        padding: 20px; /* Maintain default padding */
+        border-radius: 15px; /* Maintain default rounding */
+    }
+
+    #thank-you-message p {
+        font-size: 1.2rem; /* Maintain default font size */
+        margin-bottom: 10px;
+    }
+
+    #thank-you-message strong {
+        font-size: 1.3rem; /* Maintain default font size */
+    }
+}
+
+/* For Medium Screens (1024px and below) */
+@media (max-width: 1024px) {
+    #thank-you-message {
+        bottom: -45px; /* Move slightly higher */
+        left: 42.5%; /* Adjust centering slightly */
+        width: 92%; /* Increase width slightly */
+        max-width: 380px; /* Reduce max width slightly */
+        padding: 18px; /* Reduce padding slightly */
+        border-radius: 12px; /* Reduce corner rounding slightly */
+    }
+
+    #thank-you-message p {
+        font-size: 1.1rem; /* Reduce font size slightly */
+        margin-bottom: 8px;
+    }
+
+    #thank-you-message strong {
+        font-size: 1.2rem; /* Reduce font size slightly */
+    }
+}
+
+/* For Tablets (768px and below) */
+@media (max-width: 768px) {
+    #thank-you-message {
+        bottom: -40px; /* Move higher to fit smaller screens */
+        left: 45%; /* Adjust horizontal position slightly */
+        width: 95%; /* Increase width to use more screen space */
+        max-width: 350px; /* Reduce max width for better fit on smaller screens */
+        padding: 16px; /* Reduce padding further for compact design */
+        border-radius: 10px; /* Reduce corner rounding further */
+    }
+
+    #thank-you-message p {
+        font-size: 1rem; /* Reduce font size for better readability on smaller screens */
+        margin-bottom: 6px;
+    }
+
+    #thank-you-message strong {
+        font-size: 1.1rem; /* Reduce font size of the strong text slightly */
+    }
+}
+
+/* For Large Phones (480px and below) */
+@media (max-width: 480px) {
+    #thank-you-message {
+        bottom: -30px; /* Move even higher to fit smaller screens better */
+        left: 50%; /* Center it fully on smaller screens */
+        width: 100%; /* Use full width of the screen minus padding/margins */
+        max-width: none; /* Remove max-width restriction for full responsiveness */
+        padding: 14px; /* Reduce padding further for smaller screens */
+        border-radius: 8px; /* Reduce corner rounding further */
+        box-shadow: none; /* Remove shadow for simpler design on small devices */
+    }
+
+    #thank-you-message p {
+        font-size: 0.9rem; /* Reduce font size further for small screens */
+        margin-bottom: 5px;
+    }
+
+    #thank-you-message strong {
+        font-size: 1rem; /* Reduce font size further for small screens */
+    }
+}
+
+/* For Small Phones (320px and below) */
+@media (max-width: 320px) {
+    #thank-you-message {
+        bottom: -20px; /* Move as high as possible to fit very small screens */
+        left: 50%; 
+        width: calc(100% - 10px); /* Add some margin from edges of the screen */
+        padding: 12px; /* Reduce padding to minimum for very small screens */
+        border-radius: 6px; /* Reduce corner rounding to minimum */
+    }
+
+    #thank-you-message p {
+        font-size: 0.8rem; /* Reduce font size to minimum for very small screens */
+        margin-bottom: 4px;
+    }
+
+    #thank-you-message strong {
+        font-size: 0.9rem; /* Reduce font size to minimum for very small screens */
+    }
+}
+
+
 
 /* Facebook Embed */
 .facebook-embed {
