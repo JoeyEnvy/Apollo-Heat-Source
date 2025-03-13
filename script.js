@@ -404,3 +404,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             // Auto-slide every 5 seconds
             setInterval(showNextReviewsSlide, 5000);
         });
+
+//reviews page call to action and testimonials 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? 1 : 0;
+            slide.style.transform = i === index ? 'scale(1.05)' : 'scale(1)'; /* Small zoom */
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide);
+    setInterval(nextSlide, 5000);
+});
+

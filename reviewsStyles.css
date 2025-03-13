@@ -1,12 +1,13 @@
 :root {
-    --primary-color: #1A5F7A;
-    --accent-color: #FF9900;
-    --white: #FFFFFF;
-    --secondary-color: #25D366; /* WhatsApp button background */
-    --tertiary-color: #3498db; /* Call button background */
-    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --transition-speed: 0.3s;
+    --primary-color: #1a5f7a;
+    --secondary-color: #f4a261;
+    --accent-color: #e76f51;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --white: #ffffff;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 /* Font imports - adjust URLs as needed */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -396,7 +397,6 @@ nav ul li a:hover::after {
 
 
 /* Intro Section Styles */
-/* Intro Section Styles */
 .reviews-intro {
     position: relative;
     height: 50vh;
@@ -602,144 +602,502 @@ nav ul li a:hover::after {
 
 
 
-/* Reviews Grid Styles */
-.reviews-grid {
-    background-color: #f9f9f9;
-    padding: 60px 20px;
+/* ReviewsGallery1 Section */
+.triangle-divider {
+    width: 100%;
+    height: 100px; /* Adjust the height as needed */
+    background: #1a5f7a;
+    position: relative;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%); /* Creates the angled effect */
 }
 
-.reviews-grid__container {
-    max-width: 1200px;
-    margin: 0 auto;
+.reviews-and-gallery {
+    position: relative;
+    padding: 60px 0;
+    background-color: #1a5f7a;
+overflow: hidden; /* added */
 }
 
-.reviews-grid__title {
+.reviews-and-gallery::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Increased overlap for a larger effect */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Increased height for a thicker divider */
+    background-color: #1a5f7a;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+
+
+/* Container for Flexbox Layout */
+.reviews-and-gallery .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+}
+
+/* Reviews Section Title */
+.reviews-grid__title, .gallery-section h2 {
+    font-family: Arial, sans-serif; /* Reverting to old font */
     font-size: 2.5rem;
-    color: #FFA500;
+    color: #FF9900; /* Orange */
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 40px;
-    border-bottom: 3px solid #1a5f7a;
+    border-bottom: 3px solid #FFFFFF; /* White border under heading */
     display: inline-block;
     padding-bottom: 10px;
 }
 
+/* Reviews Grid Items */
 .reviews-grid__items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 30px;
 }
 
 .reviews-page__grid-item {
-    background-color: #ffffff;
+    background-color: #FFFFFF; /* White background for reviews */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 25px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.reviews-page__grid-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.reviews-page__grid-content {
-    display: flex;
-    flex-direction: column;
 }
 
 .reviews-page__grid-heading {
+    font-family: Arial Black, sans-serif; /* Bold sans-serif font for subheadings */
     font-size: 1.6rem;
-    color: #1a5f7a;
-    margin-bottom: 15px;
+    color: #FF9900; /* Orange heading text */
 }
 
 .reviews-page__grid-content p {
     font-size: 1rem;
-    color: #555555;
-    line-height: 1.6;
 }
 
-.reviews-page__grid-reviewer {
-    font-weight: bold;
-    color: #159895;
-    margin-top: 15px;
+/* Gallery Section Styling */
+.gallery-section {
+    flex-grow: 1; /* Ensures equal height with reviews section */
 }
 
-.reviews-page__grid-rating {
-    font-weight: bold;
-    color: #57c5b6;
-}
-
-/* Image Gallery Styles */
-.reviews-page .image-gallery,
-.reviews-page .additional-gallery {
-    padding: 80px 0;
-    background-color: var(--background-color);
-}
-
-.reviews-page .image-gallery h2,
-.reviews-page .additional-gallery h2 {
-    text-align: center;
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.reviews-page .gallery-grid {
+/* Gallery Grid with Square Images */
+.gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(150px, auto)); /* Two columns for images */
+    gap: 20px; /* Space between images */
 }
 
-.reviews-page .gallery-grid img {
+.gallery-grid img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: var(--box-shadow);
-    transition: transform 0.3s ease;
-    will-change: transform;
+    aspect-ratio: 1 / 1; /* Ensures images are always square */
+    object-fit: cover; /* Ensures images fill the square without distortion */
+    border-radius: 8px; /* Rounded corners for images */
+    border: 3px solid #FF9900; /* Orange border around images */
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out; /* Smooth hover effect */
 }
 
-.reviews-page .gallery-grid img:hover {
-    transform: scale(1.05);
+/* Hover Effect for Gallery Images */
+.gallery-grid img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
-/* CTA Section Styles */
-.reviews-page .cta-section {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    padding: 80px 0;
-    text-align: center;
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller devices (max-width of ~1024px) */
+@media (max-width: 1024px) {
+   .reviews-and-gallery .container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+   }
+
+   .gallery-grid {
+       grid-template-columns: repeat(3, minmax(100px, auto)); 
+   }
 }
 
-.reviews-page .cta-section h3 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* For mobile devices (max-width of ~768px) */
+@media (max-width: 768px) {
+   .reviews-grid__title,
+   .gallery-section h2 {
+      font-size: 2rem;
+   }
+      
+   .gallery-grid {
+      grid-template-columns: repeat(2, minmax(100px, auto));
+   }
+
+   .reviews-page__grid-item {
+      padding: 15px; /* Reduce padding for smaller screens */
+   }
+
+   .reviews-page__grid-heading {
+      font-size: 1.4rem; /* Slightly smaller headings on mobile */
+   }
 }
 
-.reviews-page .cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+/* For very small mobile devices (max-width of ~480px) */
+@media (max-width: 480px) {
+   .reviews-grid__title,
+   .gallery-section h2 {
+      font-size: 1.8rem;
+   }
+
+   .gallery-grid {
+      grid-template-columns: 1fr; /* Single column for very small screens */
+   }
+
+   .reviews-page__grid-heading {
+      font-size: 1.2rem;
+   }
+
+   .reviews-page__grid-content p {
+      font-size: 0.9rem;
+   }
+
+   .reviews-and-gallery {
+      padding: 40px 0; /* Reduce overall padding on very small screens */
+   }
+
+   .reviews-and-gallery::before {
+      height: 10px; /* Smaller divider for mobile */
+      top: -10px;
+   }
 }
 
-.reviews-page .cta-button {
+/* call-to-action-testimonial-thin-section Styles */
+/* call-to-action-testimonial-thin-section Styles */
+.call-to-action-testimonial-thin-section {
+    background-color: #f8f8f8;
+    height: 25vh; /* Fixed height for desktop */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: 2% 0;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 0;
+    box-sizing: border-box;
+}
+
+.call-to-action-testimonial-thin-section .container {
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 40px;
+    height: 100%;
+}
+
+/* Gradient Overlay */
+.call-to-action-testimonial-thin-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(26, 95, 122, 0.1), rgba(244, 162, 97, 0.1));
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Left Column (CTA and Company Info) */
+.call-to-action-testimonial-thin-section .cta-column {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    animation: slideInLeft 1s ease-out;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.call-to-action-testimonial-thin-section .cta-content {
+    flex: 1;
+}
+
+.call-to-action-testimonial-thin-section .cta-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.call-to-action-testimonial-thin-section .cta-column p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: var(--secondary-color);
+}
+
+.call-to-action-testimonial-thin-section .cta-button {
     display: inline-block;
     background: var(--accent-color);
     color: var(--white);
-    padding: 15px 40px;
-    border-radius: 30px;
+    padding: 10px 20px;
+    border-radius: 25px;
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
-.reviews-page .cta-button:hover {
+.call-to-action-testimonial-thin-section .cta-button:hover {
     background: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* Company Info Styling */
+.call-to-action-testimonial-thin-section .company-info {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(26, 95, 122, 0.1);
+    margin-left: 20px;
+}
+
+.call-to-action-testimonial-thin-section .company-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+.call-to-action-testimonial-thin-section .company-info i {
+    margin-right: 8px;
+    color: var(--accent-color);
+    width: 16px;
+    text-align: center;
+}
+
+/* Right Column (Testimonials) */
+.call-to-action-testimonial-thin-section .testimonial-column {
+    flex: 1;
+    padding: 20px;
+    background: var(--white);
+    overflow: hidden;
+    z-index: 1;
+    animation: fadeIn 1s ease-out;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-right: 4px solid var(--accent-color);
+}
+
+/* Testimonial Slider */
+.call-to-action-testimonial-thin-section .testimonial-slider {
+    width: 100%;
+    position: relative;
+}
+
+.call-to-action-testimonial-thin-section .testimonial-slide {
+    position: absolute;
+    top: -65px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.call-to-action-testimonial-thin-section .testimonial-slide:first-child {
+    opacity: 1;
+}
+
+.call-to-action-testimonial-thin-section .testimonial-slide blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.call-to-action-testimonial-thin-section .testimonial-slide cite {
+    font-style: normal;
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.call-to-action-testimonial-thin-section .testimonial-slide cite:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Breakpoints */
+
+
+/* Large devices (desktops, 1024px to 1649px) */
+@media (max-width: 1649px) and (min-width: 1024px) {
+    .call-to-action-testimonial-thin-section .container {
+        max-width: 90%;
+        padding: 0 30px;
+    }
+
+    .call-to-action-testimonial-thin-section .cta-column {
+        gap: 25px; /* Adjusted gap between button and contacts for this screen size */
+    }
+
+    .call-to-action-testimonial-thin-section .testimonial-column {
+        gap: 25px; /* Increased gap between button and writing in testimonial column */
+        padding-top: 10px; /* Reduced top padding to move content up more */
+    }
+
+    .call-to-action-testimonial-thin-section .testimonial-slide {
+        margin-top: -10px; /* Move writing up a bit more */
+    }
+}
+
+/* Desktops (1024px to 1320px) */
+@media only screen and (min-width: 1024px) and (max-width: 1320px) {
+  .call-to-action-testimonial-thin-section {
+    min-height: 30vh;
+  }
+  
+  .call-to-action-testimonial-thin-section .container {
+    max-width: 95%;
+    padding: 0 20px;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column {
+    padding: 20px 15px; /* Increased vertical padding */
+    gap: 30px; /* Increased gap for more space */
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column p {
+    font-size: 0.9rem;
+  }
+  
+  .call-to-action-testimonial-thin-section .testimonial-column {
+    padding: 20px 15px; /* Increased vertical padding */
+    gap: 30px; /* Increased gap for more space */
+  }
+}
+
+/* Tablets (768px to 1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .call-to-action-testimonial-thin-section {
+    min-height: 60vh; /* Significantly increased height */
+  }
+  
+  .call-to-action-testimonial-thin-section .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column,
+  .call-to-action-testimonial-thin-section .testimonial-column {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+/* Large phones (480px to 767px) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .call-to-action-testimonial-thin-section {
+    min-height: 70vh;
+  }
+  
+  .call-to-action-testimonial-thin-section .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column,
+  .call-to-action-testimonial-thin-section .testimonial-column {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  .call-to-action-testimonial-thin-section .testimonial-slide blockquote {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small phones (340px to 479px) */
+@media only screen and (min-width: 340px) and (max-width: 479px) {
+  .call-to-action-testimonial-thin-section {
+    min-height: 80vh;
+  }
+  
+  .call-to-action-testimonial-thin-section .container {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column,
+  .call-to-action-testimonial-thin-section .testimonial-column {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-column p {
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+  
+  .call-to-action-testimonial-thin-section .testimonial-slide blockquote {
+    font-size: 0.85rem;
+  }
+  
+  .call-to-action-testimonial-thin-section .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
 
 /* Reviews Slider Styles */
 .reviews-page .reviews-slider {
@@ -773,44 +1131,6 @@ nav ul li a:hover::after {
 .reviews-page .reviews-page__reviewer {
     font-weight: bold;
     color: var(--primary-color);
-}
-
-/* Final CTA Styles */
-.reviews-page .review-cta {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 60px 0;
-    text-align: center;
-}
-
-.reviews-page .review-cta h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-.reviews-page .review-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-/* Testimonial Highlight Styles */
-.reviews-page .testimonial-highlight {
-    background-color: var(--white);
-    padding: 80px 0;
-    text-align: center;
-}
-
-.reviews-page .testimonial-highlight blockquote {
-    font-size: 1.5rem;
-    font-style: italic;
-    color: var(--primary-color);
-    max-width: 800px;
-    margin: 0 auto 20px;
-}
-
-.reviews-page .testimonial-highlight cite {
-    font-style: normal;
-    color: var(--secondary-color);
 }
 
 
@@ -930,7 +1250,7 @@ footer {
 
 .contact-button {
     bottom: 20px;
- background-color: var(--tertiary-color);
+ background-color: #1a5f7a;
 }
 
 .whatsapp-button:hover,
