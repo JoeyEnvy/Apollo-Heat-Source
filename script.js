@@ -367,3 +367,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
+//script for hero top sections reviews page slider underneath intro bar 
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviewsSlider = document.querySelector('.reviews-hero-top-slider__wrapper');
+            const reviewsItems = document.querySelectorAll('.reviews-hero-top-slider__item');
+            const reviewsPrevBtn = document.querySelector('.reviews-hero-top-slider__prev');
+            const reviewsNextBtn = document.querySelector('.reviews-hero-top-slider__next');
+            let reviewsCurrentIndex = 0;
+
+            function showReviewsSlide(index) {
+                if (index < 0) {
+                    reviewsCurrentIndex = reviewsItems.length - 1;
+                } else if (index >= reviewsItems.length) {
+                    reviewsCurrentIndex = 0;
+                } else {
+                    reviewsCurrentIndex = index;
+                }
+                const offset = -reviewsCurrentIndex * 100;
+                reviewsSlider.style.transform = `translateX(${offset}%)`;
+            }
+
+            function showNextReviewsSlide() {
+                showReviewsSlide(reviewsCurrentIndex + 1);
+            }
+
+            function showPrevReviewsSlide() {
+                showReviewsSlide(reviewsCurrentIndex - 1);
+            }
+
+            reviewsNextBtn.addEventListener('click', showNextReviewsSlide);
+            reviewsPrevBtn.addEventListener('click', showPrevReviewsSlide);
+
+            // Auto-slide every 5 seconds
+            setInterval(showNextReviewsSlide, 5000);
+        });
