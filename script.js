@@ -427,3 +427,54 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(nextSlide, 5000);
 });
 
+
+
+
+//gallery page filtering shadowing and lightbox 
+
+// Gallery filtering
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    galleryItems.forEach(item => {
+      if (filter === 'all' || item.dataset.category === filter) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Lightbox functionality
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+document.body.appendChild(lightbox);
+
+galleryItems.forEach(item => {
+  item.addEventListener('click', e => {
+    lightbox.classList.add('active');
+    const img = document.createElement('img');
+    img.src = e.currentTarget.querySelector('img').src;
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild);
+    }
+    lightbox.appendChild(img);
+  });
+});
+
+lightbox.addEventListener('click', e => {
+  if (e.target !== e.currentTarget) return;
+  lightbox.classList.remove('active');
+});
+
+
+//gallerypage testimonials autoscroll slider 
+

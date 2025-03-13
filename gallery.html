@@ -27,7 +27,7 @@
     <link rel="icon" href="images/apollo favicon.png" type="image/png">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="galleryStyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
@@ -83,75 +83,82 @@
 
     
     <main>
-        <section class="page-header">
-            <h1>Project Gallery</h1>
-            <p>Explore our recent installations and transformations</p>
-        </section>
 
-        <section class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://example.com/stove1.jpg" alt="Modern woodburning stove installation">
-                <div class="gallery-caption">
-                    <h3>Modern Woodburning Stove</h3>
-                    <p>Sleek design for a contemporary living room</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://example.com/fireplace1.jpg" alt="Traditional fireplace renovation">
-                <div class="gallery-caption">
-                    <h3>Traditional Fireplace Renovation</h3>
-                    <p>Restoring charm to a period property</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://example.com/stove2.jpg" alt="Rustic log burner installation">
-                <div class="gallery-caption">
-                                       <h3>Rustic Log Burner</h3>
-                    <p>Cozy addition to a country cottage</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://example.com/fireplace2.jpg" alt="Contemporary fireplace design">
-                <div class="gallery-caption">
-                    <h3>Contemporary Fireplace</h3>
-                    <p>Minimalist design for a modern home</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://example.com/stove3.jpg" alt="Cast iron stove installation">
-                <div class="gallery-caption">
-                    <h3>Cast Iron Stove</h3>
-                    <p>Classic style with modern efficiency</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://example.com/fireplace3.jpg" alt="Outdoor fireplace construction">
-                <div class="gallery-caption">
-                    <h3>Outdoor Fireplace</h3>
-                    <p>Extending living space into the garden</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://example.com/chimney1.jpg" alt="Chimney renovation">
-                <div class="gallery-caption">
-                    <h3>Chimney Renovation</h3>
-                    <p>Restoring functionality and safety</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://example.com/stove4.jpg" alt="Multi-fuel stove installation">
-                <div class="gallery-caption">
-                    <h3>Multi-fuel Stove</h3>
-                    <p>Versatile heating solution for any home</p>
-                </div>
-            </div>
-        </section>
 
-        <section class="cta-section">
-            <h2>Inspired by our work?</h2>
-            <p>Let's discuss how we can transform your space.</p>
-            <a href="contact.html" class="cta-button">Start Your Project</a>
-        </section>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Warmth & Elegance</h1>
+    <p class="hero-tagline">Discover Our Stunning Installations</p>
+  </div>
+  <div class="hero-image">
+    <img src="path/to/hero-image.jpg" alt="Beautifully installed stove">
+  </div>
+  <div class="hero-overlay"></div>
+</section>
+
+
+
+
+<section class="gallery">
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="log-burners">Log Burners</button>
+    <button class="filter-btn" data-filter="fireplaces">Fireplace Surrounds</button>
+    <button class="filter-btn" data-filter="installations">Installations & Chimney Work</button>
+    <button class="filter-btn" data-filter="before-after">Before & After</button>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" data-category="log-burners">
+      <img src="path/to/image1.jpg" alt="Modern log burner">
+      <div class="gallery-item-overlay">
+        <h3>Modern Log Burner</h3>
+        <p>Sleek design for contemporary homes</p>
+      </div>
+    </div>
+    <!-- Add more gallery items here -->
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial-slide">
+      <p>"Apollo Heat Source transformed our living room with a beautiful log burner. Professional service from start to finish!"</p>
+      <cite>- John D., Doncaster</cite>
+    </div>
+    <div class="testimonial-slide">
+      <p>"The team was efficient, friendly, and the results were stunning. Highly recommend their services!"</p>
+      <cite>- Sarah L., Mexborough</cite>
+    </div>
+    <div class="testimonial-slide">
+      <p>"They brought warmth and elegance to our home. The craftsmanship is second to none."</p>
+      <cite>- Michael T., South Yorkshire</cite>
+    </div>
+    <!-- Add more testimonials as needed -->
+  </div>
+</section>
+
+
+
+<section class="cta">
+  <h2>Ready to Transform Your Space?</h2>
+  <a href="#contact" class="cta-button">Get a Free Quote</a>
+  <div class="contact-info">
+    <p>Call us: <a href="tel:07941338659">07941338659</a></p>
+    <p>Email: <a href="mailto:info@apolloheatsource.co.uk">info@apolloheatsource.co.uk</a></p>
+  </div>
+</section>
+
+
+
+
     </main>
 
 <footer>
