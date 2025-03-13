@@ -1355,8 +1355,10 @@ section#contact.contact h2 {
 
     @media screen and (max-width: 1250px) {
         .logo {
-            margin-right: 75px;
+            margin-right: 65px;
+            margin-left: -50px;
         }
+
     }
 
 
@@ -1366,6 +1368,7 @@ section#contact.contact h2 {
     .container {
         padding: 0 20px;
     }
+
 
     /* Navbar Styles */
     #navbar {
@@ -1386,6 +1389,7 @@ section#contact.contact h2 {
 
     .logo img {
         max-height: 40px;
+        margin-left: 50px;
     }
 
     /* Hamburger Menu Styles */
@@ -1394,7 +1398,7 @@ section#contact.contact h2 {
 display: block;
 position: fixed;
 top: 60px;
-right: 75px;
+right: 85px;
 z-index: 2000;
 cursor: pointer;
 }
@@ -1576,13 +1580,13 @@ transform: rotate(-45deg) translate(7px, -6px);
 
     .logo img {
         height: 35px;
-        margin-left: 10px;
+        margin-left: 75px;
         margin-top: 5px;
     }
 
     .hamburger {
         position: fixed;
-        right: 20px;
+        right: 75px;
         top: 45px; /* Adjusted for new navbar position */
         z-index: 1001;
     }
@@ -1723,12 +1727,12 @@ transform: rotate(-45deg) translate(7px, -6px);
 
     .logo img {
         max-height: 38px;
-        margin-left: 8px;
+        margin-left: 50px;
         margin-top: 4px;
     }
 
     .hamburger {
-        right: 15px;
+        right: 50px;
         top: 35px;
     }
 
@@ -1776,12 +1780,12 @@ transform: rotate(-45deg) translate(7px, -6px);
 
     .logo img {
         max-height: 40px;
-        margin-left: 5px;
+        margin-left: 50px;
         margin-top: 5px;
     }
 
     .hamburger {
-        right: 10px;
+        right: 35px;
         top: 45px;
     }
 
@@ -1919,12 +1923,12 @@ transform: rotate(-45deg) translate(7px, -6px);
 
     .logo img {
         max-height: 35px;
-        margin-left: 15px;
+        margin-left: 75px;
         margin-top: 3px;
     }
 
     .hamburger {
-        right: 8px;
+        right: 50px;
         top: 40px;
     }
 
