@@ -1264,17 +1264,17 @@ footer {
 
 .whatsapp-button {
     bottom: 180px;
-    background-color: var(--secondary-color);
+    background-color: #34C759;
 }
 
 .contact-button {
     bottom: 100px;
-    background-color: #1a5f7a;
+    background-color: #FFA07A;
 }
 
 .back-to-top {
     bottom: 20px;
-    background-color: var(--primary-color);
+    background-color: #87CEEB;
 }
 
 .whatsapp-button:hover,
