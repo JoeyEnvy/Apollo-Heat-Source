@@ -257,19 +257,26 @@ nav ul li a:hover::after {
 
 /* 768px breakpoint */
 @media only screen and (max-width: 768px) {
-    .hamburger {
+ .hamburger {
         display: block;
+        z-index: 1001;
     }
     
     nav ul {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: var(--navbar-height); /* Start immediately below navbar */
         left: 0;
         width: 100%;
-        background-color: var(--white);
+        height: calc(100vh - var(--navbar-height)); /* Full height minus navbar */
+        background-color: rgba(255, 255, 255, 0.75);
         box-shadow: var(--box-shadow);
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+        z-index: 1000;
+        overflow-y: auto; /* For scrolling if needed */
     }
     
     nav ul.show {
@@ -277,24 +284,44 @@ nav ul li a:hover::after {
     }
     
     nav ul li {
-        margin: 0.625rem 0;
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
     }
     
     nav ul li a {
         display: block;
-        padding: 0.625rem 1.25rem;
+        padding: 1rem;
+        color: var(--accent-color);
+        font-size: 1.1rem;
     }
-    
+
+    /* Keep original top-bar styles */
     .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 0.625rem 1.25rem;
+        flex-wrap: wrap;
     }
     
-    .top-bar :last-child {
-        margin-right: 0;
-        margin-top: 0.3125rem;
+    .top-bar > * {
+        margin: 0.3125rem 0;
     }
+    
+    .top-bar, .top-bar a {
+        font-size: 0.9rem;
+    }
+    
+    .social-media {
+        white-space: nowrap;
+    }
+
+nav ul li:last-child {
+  margin-left: 50px;
+}
+
+
 }
 
 /* 480px breakpoint */
@@ -716,9 +743,10 @@ footer {
     color: #e76f51;
 }
 
-/* WhatsApp and Contact Buttons */
+/* WhatsApp, Contact, and Back-to-Top Buttons */
 .whatsapp-button,
-.contact-button {
+.contact-button,
+.back-to-top {
     position: fixed;
     right: 20px;
     width: 60px;
@@ -736,16 +764,22 @@ footer {
 }
 
 .whatsapp-button {
-    bottom: 100px;
+    bottom: 180px; /* Adjusted positioning */
 }
 
 .contact-button {
-    bottom: 20px;
+    bottom: 100px; /* Adjusted positioning */
+}
+
+.back-to-top {
+    bottom: 20px; /* Positioned at the bottom */
+    background-color: var(--primary-color); /* Distinct color for back-to-top */
 }
 
 .whatsapp-button:hover,
-.contact-button:hover {
-    transform: scale(1.1);
+.contact-button:hover,
+.back-to-top:hover {
+    transform: scale(1.1); /* Hover effect for all buttons */
 }
 
 /* Animations */
@@ -786,7 +820,6 @@ footer {
 }
 
 /* Responsive Styles */
-/* Responsive Styles */
 @media screen and (max-width: 1024px) {
     .footer-content {
         padding: 0 20px;
@@ -797,6 +830,26 @@ footer {
     .footer-section {
         flex-basis: calc(50% - 20px);
         max-width: calc(50% - 20px);
+    }
+
+    .whatsapp-button,
+    .contact-button,
+    .back-to-top {
+        width: 55px; /* Slightly smaller buttons */
+        height: 55px;
+        font-size: 1.4rem; /* Adjusted font size */
+    }
+
+    .whatsapp-button {
+        bottom: 170px; /* Adjusted positioning */
+    }
+
+    .contact-button {
+        bottom: 95px; /* Adjusted positioning */
+    }
+
+    .back-to-top {
+        bottom: 20px; /* Positioned at the bottom */
     }
 }
 
@@ -821,19 +874,24 @@ footer {
     }
 
     .whatsapp-button,
-    .contact-button {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-        right: 15px;
+    .contact-button,
+    .back-to-top {
+        width: 65px; /* Larger buttons for smaller screens */
+        height: 65px;
+        font-size: 1.6rem; /* Increased font size for better visibility */
+        right: 15px; /* Adjusted positioning */
     }
 
     .whatsapp-button {
-        bottom: 80px;
+        bottom: 190px; /* Adjusted positioning */
     }
 
     .contact-button {
-        bottom: 15px;
+        bottom: 105px; /* Adjusted positioning */
+    }
+
+    .back-to-top {
+        bottom: 20px; /* Positioned at the bottom */
     }
 }
 
@@ -848,25 +906,30 @@ footer {
     }
 
     .social-icons a {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Adjusted icon size */
         margin-right: 10px;
     }
 
     .whatsapp-button,
-    .contact-button {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-        right: 10px;
+    .contact-button,
+    .back-to-top {
+        width: 60px; /* Slightly smaller buttons for mobile screens */
+        height: 60px;
+        font-size: 1.5rem; /* Adjusted font size for better visibility */
+        right: 10px; /* Adjusted positioning closer to edges */
     }
 
     .whatsapp-button {
-        bottom: 60px;
+        bottom: 180px; /* Adjusted positioning */
     }
 
     .contact-button {
-        bottom: 10px;
+        bottom: 100px; /* Adjusted positioning */
     }
+
+    .back-to-top {
+        bottom: 20px; /* Positioned at the bottom */
+   }
 }
 
 @media screen and (max-width: 340px) {
@@ -889,10 +952,24 @@ footer {
     }
 
     .whatsapp-button,
+    .contact-button,
+    .back-to-top {
+        width: 55px; /* Slightly smaller buttons for very small screens */
+        height: 55px;
+        font-size: 1.4rem; /* Adjusted font size */
+        right: 8px; /* Positioned closer to the edge */
+    }
+
+    .whatsapp-button {
+        bottom: 170px; /* Adjusted positioning */
+    }
+
     .contact-button {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
-        right: 8px;
+        bottom: 95px; /* Adjusted positioning */
+    }
+
+    .back-to-top {
+        bottom: 20px; /* Positioned at the bottom */
     }
 }
+
