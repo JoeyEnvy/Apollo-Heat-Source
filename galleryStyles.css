@@ -319,7 +319,7 @@ nav ul li a:hover::after {
     }
 
     nav ul li:last-child {
-        margin-left: 0; /* Remove left margin for last item on mobile */
+        margin-left: 75px; /* Remove left margin for last item on mobile */
     }
 
     /* Ensure text color stays orange on scroll */
