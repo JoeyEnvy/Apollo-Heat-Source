@@ -446,3 +446,74 @@ lightbox.addEventListener('click', e => {
 
 //gallerypage testimonials autoscroll slider 
 
+
+
+
+
+
+
+
+
+
+
+
+//gallery top underhero slider 
+
+// Immediately Invoked Function Expression (IIFE) to create a unique namespace
+(function() {
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Use a very specific selector for the gallery slider
+    const gallerySlider = document.querySelector('section.gallery > .gallery-slider');
+    
+    if (gallerySlider) {
+      const sliderContent = gallerySlider.innerHTML;
+
+      // Double the content for seamless looping
+      gallerySlider.innerHTML = sliderContent + sliderContent;
+
+      let isHovered = false;
+      let animationPaused = false;
+
+      // Use more specific event listeners
+      gallerySlider.addEventListener('mouseenter', function() {
+        isHovered = true;
+        if (!animationPaused) {
+          gallerySlider.style.animationPlayState = 'paused';
+          animationPaused = true;
+        }
+      });
+
+      gallerySlider.addEventListener('mouseleave', function() {
+        isHovered = false;
+        if (animationPaused) {
+          gallerySlider.style.animationPlayState = 'running';
+          animationPaused = false;
+        }
+      });
+
+      // Reset animation when it completes
+      gallerySlider.addEventListener('animationiteration', function() {
+        if (!isHovered) {
+          gallerySlider.style.animation = 'none';
+          gallerySlider.offsetHeight; // Trigger reflow
+          gallerySlider.style.animation = null;
+        }
+      });
+    }
+  });
+})();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const filtersContainer = document.querySelector('.gallery-filters');
+  
+  filtersContainer.addEventListener('mouseenter', function() {
+    this.style.animationPlayState = 'paused';
+  });
+
+  filtersContainer.addEventListener('mouseleave', function() {
+    this.style.animationPlayState = 'running';
+  });
+});
+
