@@ -594,6 +594,7 @@ body {
   align-items: center;
   padding: 5rem 10rem;
   background-color: #f5f5f5;
+   
 }
 
 /* Info Images Layout */
@@ -747,23 +748,6 @@ body {
 }
 
 /* Media Queries for Responsive Design */
-
-/* Large screens (1650px and above) */
-@media (min-width: 1650px) {
-  /* Add styles for larger screens if needed */
-  .hero-title {
-    font-size: 4rem;
-  }
-  
-  .hero-tagline {
-    font-size: 1.8rem;
-  }
-   
-.divider {
-margin-top: -2px;
-}
-
-}
 
 /* Medium-large screens (1024px to 1649px) */
 @media (max-width: 1649px) and (min-width: 1024px) {
