@@ -517,3 +517,80 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+
+//hetas gallery page slider large 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const gallerySlider = document.querySelector('.hetas-1-gallery-slider');
+
+  // Create 25 gallery items
+  for (let i = 1; i <= 25; i++) {
+    const galleryItem = document.createElement('div');
+    galleryItem.className = 'hetas-1-gallery-item';
+    galleryItem.dataset.category = 'gallery';
+
+    galleryItem.innerHTML = `
+      <img src="images/${i}.webp" alt="Hetas Gallery Image ${i}">
+      <div class="hetas-1-gallery-item-overlay">
+        <a href="reviews.html" class="hetas-1-review-button">Customer Reviews</a>
+      </div>
+    `;
+
+    gallerySlider.appendChild(galleryItem);
+  }
+
+  // Full screen functionality
+  const modal = document.createElement('div');
+  modal.className = 'hetas-1-fullscreen-modal';
+  document.body.appendChild(modal);
+
+  gallerySlider.addEventListener('click', function(e) {
+    const item = e.target.closest('.hetas-1-gallery-item');
+    if (item && !e.target.closest('.hetas-1-review-button')) {
+      const img = item.querySelector('img');
+      const fullImg = document.createElement('img');
+      fullImg.src = img.src;
+      fullImg.className = 'hetas-1-fullscreen-image';
+      
+      const closeBtn = document.createElement('span');
+      closeBtn.innerHTML = '&times;';
+      closeBtn.className = 'hetas-1-fullscreen-close';
+      
+      modal.innerHTML = '';
+      modal.appendChild(fullImg);
+      modal.appendChild(closeBtn);
+      modal.style.display = 'flex';
+      
+      closeBtn.onclick = function() {
+        modal.style.display = 'none';
+      }
+    }
+  });
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+});
+
+
+//walll image gallery part for galler.html
+
+document.addEventListener('DOMContentLoaded', function() {
+  const wallGrid = document.querySelector('.wall-grid');
+
+  for (let i = 25; i <= 39; i++) {
+    const gridItem = document.createElement('div');
+    gridItem.className = 'wall-grid-item';
+
+    const img = document.createElement('img');
+    img.src = `images/${i}.webp`;
+    img.alt = `Wall Image ${i}`;
+
+    gridItem.appendChild(img);
+    wallGrid.appendChild(gridItem);
+  }
+});
+

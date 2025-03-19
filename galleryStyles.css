@@ -378,13 +378,6 @@ nav ul li a:hover::after {
 
 
 
-
-/* gallery main and styles */
-
-
-
-
-
 /* galleryhero */ 
 
 /* General Reset */
@@ -588,12 +581,6 @@ body {
 /* MEDIA QUERIES for contact button apollog logo gallery filter part  */
 
 
-@media only screen and (min-width: 1024px) {
-  .contact-btn {
-    width: auto; /* Remove full width */
-    max-width: 300px; /* Set a maximum width */
-    margin: 20px auto 0; /* Center the button */
-  }
 
 /* For large tablets and medium screens (1024px and below) */
 @media (max-width: 1024px) {
@@ -1503,6 +1490,255 @@ img[src="images/apollo rectangle white wrtiing.png"] {
 
 
 
+
+
+
+
+
+
+
+/* Hetas Gallery Section Styles */
+/* Hetas Gallery Section Styles */
+.hetas-1-gallery-section {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  margin-left: calc(-50vw + 50%);
+  padding: 40px 0;
+}
+
+.hetas-1-gallery-slider {
+  display: flex;
+  gap: 20px; /* Increased gap between images */
+  animation: hetas1SlideGallery 150s linear infinite; /* Slowed down to 150 seconds */
+}
+
+.hetas-1-gallery-item {
+  position: relative;
+  flex-shrink: 0;
+  width: 400px; /* Larger image size */
+  height: 400px; /* Maintain square aspect ratio */
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hetas-1-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hetas-1-gallery-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26,95,122,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.hetas-1-review-button {
+  padding: 12px 24px;
+  background-color: rgba(255,255,255,0.8);
+  color: #1a5f7a;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hetas-1-review-button:hover {
+   background-color: #ffffff;
+}
+
+.hetas-1-gallery-item:hover .hetas-1-gallery-item-overlay {
+  opacity: 1;
+}
+
+.hetas-1-gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+@keyframes hetas1SlideGallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-420px * 25)); /* Adjusted for width and gap */
+  }
+}
+
+/* Full Screen Modal Styles */
+.hetas-1-fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.hetas-1-fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.hetas-1-fullscreen-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hetas-1-fullscreen-close:hover {
+  color: #bbb;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .hetas-1-gallery-item {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .hetas-1-gallery-slider {
+    gap: 15px;
+  }
+  
+  @keyframes hetas1SlideGallery {
+    100% {
+      transform: translateX(calc(-365px * 25));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hetas-1-gallery-item {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .hetas-1-gallery-slider {
+    gap: 10px;
+  }
+  
+  @keyframes hetas1SlideGallery {
+    100% {
+      transform: translateX(calc(-310px * 25));
+    }
+  }
+  
+  .hetas-1-review-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hetas-1-gallery-item {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .hetas-1-gallery-slider {
+    gap: 8px;
+  }
+  
+  @keyframes hetas1SlideGallery {
+    100% {
+      transform: translateX(calc(-258px * 25));
+    }
+  }
+  
+  .hetas-1-review-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .hetas-1-gallery-item {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hetas-1-gallery-slider {
+    gap: 5px;
+  }
+  
+  @keyframes hetas1SlideGallery {
+    100% {
+      transform: translateX(calc(-205px * 25));
+    }
+  }
+  
+  .hetas-1-review-button {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* wall image part gallery */ 
+
+
+
+
+
+
+
+.wall-of-images {
+  padding: 20px;
+}
+
+.wall-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.wall-grid-item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2px solid orange;
+}
+
+.wall-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
 
