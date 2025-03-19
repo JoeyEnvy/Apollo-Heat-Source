@@ -319,7 +319,7 @@ nav ul li a:hover::after {
     }
 
     nav ul li:last-child {
-        margin-left: 0; /* Remove left margin for last item on mobile */
+        margin-left: 75px; /* Remove left margin for last item on mobile */
     }
 
     /* Ensure text color stays orange on scroll */
@@ -531,9 +531,124 @@ body {
 
 /* Gallery Filters Header */
 .gallery-filters-header {
+  position: relative;
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem; /* Space below the logo */
 }
+
+.contact-btn {
+  display: block; /* Full-width button */
+  margin: 20px auto 0; /* Centered with top margin */
+  padding: 18px 40px; /* Larger padding for a prominent button */
+  background-color: #ff9900;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem; /* Default font size for larger screens */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100% !important;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  transition: all 0.5s ease-in-out;
+}
+
+.contact-btn:hover {
+  background-color: #e68a00;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+}
+
+.contact-btn:hover::before {
+  left: 100%;
+}
+
+.contact-btn:active {
+  transform: translateY(-1px);
+}
+
+
+/* MEDIA QUERIES for contact button apollog logo gallery filter part  */
+
+
+@media only screen and (min-width: 1024px) {
+  .contact-btn {
+    width: auto; /* Remove full width */
+    max-width: 300px; /* Set a maximum width */
+    margin: 20px auto 0; /* Center the button */
+  }
+
+/* For large tablets and medium screens (1024px and below) */
+@media (max-width: 1024px) {
+  .contact-btn {
+    font-size: 1.1rem;
+    padding: 16px 36px;
+    max-width: 280px;
+  }
+  
+  .gallery-filters-header {
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* For tablets and smaller screens (768px and below) */
+@media (max-width: 768px) {
+  .contact-btn {
+    font-size: 1rem;
+    padding: 14px 32px;
+    max-width: 250px;
+  }
+  
+  .gallery-filters-header {
+    padding-bottom: 3rem;
+  }
+}
+
+/* For large mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .contact-btn {
+    font-size: 0.9rem;
+    padding: 12px 28px;
+    max-width: 220px;
+    margin-top: 15px;
+  }
+  
+  .gallery-filters-header {
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* For small mobile devices (340px and below) */
+@media (max-width: 340px) {
+  .contact-btn {
+    font-size: 0.8rem;
+    padding: 10px 24px;
+    max-width: 200px;
+    margin-top: 10px;
+  }
+  
+  .gallery-filters-header {
+    padding-bottom: 2rem;
+  }
+}
+
 
 .gallery-filters-header img {
   max-width: 700px;
@@ -543,6 +658,17 @@ body {
          drop-shadow(0 0 4px rgba(255, 255, 255, 0.9)) 
          drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /* Gallery Filters Animation */
 .gallery-filters {
@@ -1366,6 +1492,38 @@ img[src="images/apollo rectangle white wrtiing.png"] {
     margin-bottom: 1rem;
   }
 }
+
+
+/* MAIN STYLES AFTER TOP HETAS, HERO AND SLIDER SECTION */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* testimonialsgallery */
 
