@@ -2042,11 +2042,186 @@ img[src="images/apollo rectangle white wrtiing.png"] {
 
 
 
+/* contactsection gallerypage */ 
 
 
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
+.cta {
+  background: linear-gradient(45deg, #1A5F7A, #FF9900);
+  background-size: 200% 200%;
+  animation: gradientMove 15s ease infinite;
+  color: #FFFFFF;
+  padding: 3rem 1rem;
+}
 
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.cta-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta-left, .cta-right {
+  flex: 1;
+  padding: 1rem;
+}
+
+.cta-left {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #FFFFFF;
+  color: #1A5F7A;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #FF9900;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.contact-info {
+  margin-top: 2rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  width: 25px;
+  text-align: center;
+}
+
+.contact-info a, .whatsapp-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #FF9900;
+}
+
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.whatsapp-link:hover {
+  background-color: #128C7E;
+  transform: scale(1.05);
+}
+
+.call-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #3498db;
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.call-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .cta-container {
+    flex-direction: column;
+  }
+  
+  .cta-left, .cta-right {
+    width: 100%;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+  
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .cta h2 {
+    font-size: 1.3rem;
+  }
+  
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+  
+  .contact-info p {
+    font-size: 0.8rem;
+  }
+}
 
 
 
@@ -2063,142 +2238,135 @@ img[src="images/apollo rectangle white wrtiing.png"] {
 /* testimonialsgallery */
 
 
-.testimonials {
-  background-color: #f9f9f9;
-  padding: 4rem 1rem;
-}
-
-.testimonials h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: var(--primary-color);
-}
-
-.testimonial-slider {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory; /* For smooth snapping */
-}
-
-.testimonial-slide {
-  flex-shrink: 0; /* Prevent shrinking */
-  width: calc(100% - 40px); /* Full width minus padding */
-  max-width: 500px; /* Optional max width */
-  margin: 20px;
-  padding: 2rem;
-  background-color: var(--white);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  scroll-snap-align: center;
-  transition: transform 0.3s ease;
-}
-
-.testimonial-slide:hover {
-  transform: translateY(-5px);
-}
-
-.testimonial-slide p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.testimonial-slide cite {
+testimonials-reviews-gradient-gallery {
+  background: linear-gradient(135deg, #f9f9f9 0%, #e9e9e9 100%);
+  padding: 5rem 2rem;
+  overflow: hidden;
   display: block;
-  text-align: right;
-  font-weight: bold;
-  color: var(--primary-color);
 }
 
-/* Custom scrollbar for webkit browsers */
-.testimonial-slider::-webkit-scrollbar {
-  height: 8px;
-}
-
-.testimonial-slider::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.testimonial-slider::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 10px;
-}
-
-.testimonial-slider::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-  .testimonial-slider {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    overflow-x: visible;
-  }
-
-  .testimonial-slide {
-    width: 100%;
-    margin: 0;
-  }
-}
-
-
-/* gallery call to action */ 
-
-
-.cta {
-  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-  color: var(--white);
+customer-feedback-title {
   text-align: center;
-  padding: 3rem 1rem;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
+  font-size: 2.75rem;
+  color: #1A5F7A;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  display: block;
 }
 
-.cta h2 {
-  font-size: 2.5rem;
+rotating-testimonial-carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+scrolling-testimonial-container {
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+individual-review-card {
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: 300px;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #1A5F7A 0%, #3498db 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-right: 20px;
+  scroll-snap-align: start;
+}
+
+glowing-praise {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ffffff;
   margin-bottom: 1.5rem;
+  font-style: italic;
+  display: block;
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: var(--secondary-color);
-  color: var(--white);
-  padding: 0.75rem 2rem;
-  font-size: 1.25rem;
+happy-customer-name {
+  display: block;
   font-weight: bold;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  color: #FF9900;
+  font-size: 1.1rem;
 }
 
-.cta-button:hover {
-  background-color: var(--tertiary-color);
-  transform: scale(1.05);
+verified-customer-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
 }
 
-.contact-info {
-  margin-top: 2rem;
+verified-customer-icon.green-tick {
+  color: #25D366;
 }
 
-.contact-info p {
-  font-size: 1rem;
+verified-customer-icon.blue-tick {
+  color: #FF9900;
 }
 
-.contact-info a {
-  color: var(--white);
-  text-decoration: underline;
+previous-review-button,
+next-review-button {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border-radius: 50%;
 }
 
-.contact-info a:hover {
-  color: var(--accent-color);
+previous-review-button {
+  left: 10px;
 }
 
+next-review-button {
+  right: 10px;
+}
 
+@media (max-width: 1200px) {
+  individual-review-card {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  individual-review-card {
+    flex: 0 0 calc(100% - 20px);
+  }
+  
+  customer-feedback-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  customer-feedback-title {
+    font-size: 2rem;
+  }
+  
+  individual-review-card {
+    padding: 1.5rem;
+  }
+  
+  glowing-praise {
+    font-size: 1rem;
+  }
+  
+  happy-customer-name {
+    font-size: 0.9rem;
+  }
+}
 
 
 

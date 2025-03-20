@@ -636,3 +636,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+//testimonialsreviewsforgallerys page 
+
+
