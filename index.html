@@ -366,21 +366,29 @@
     <div class="container">
         <h2>Contact Us</h2>
         <div class="contact-wrapper">
-            <!-- Contact Form and Facebook Embed side by side -->
+            <!-- Contact Form -->
             <div class="form-and-facebook">
-  <div class="form-container">
-    <form id="contact-form" class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="submit-button">Send Message</button>
-        <div id="loading-spinner" class="hidden"></div>
-    </form>
-    <div id="thank-you-message" class="hidden">
-        <p>Thank you for your message, we'll be with you soon.</p>
-        <p>Or call us here at <strong>07941 338 659</strong></p>
-    </div>
+                <div class="form-container">
+                   <form id="contact-form" class="contact-form" action="https://formsubmit.co/joemortnvs@gmail.com" method="POST">
+    <input type="hidden" name="_cc" value="apollo-heatsource@hotmail.com">
+    <input type="hidden" name="_subject" value="New Contact Form Submission">
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+    <input type="hidden" name="_template" value="table">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="submit-button">Send Message</button>
+    <div id="loading-spinner" class="hidden"></div>
+</form>
+
+<div id="thank-you-message" class="hidden">
+    <p>Thank you for your message, we'll be with you soon.</p>
+    <p>Or call us here at <strong>07941 338 659</strong></p>
 </div>
+
+                </div>
+   
 
                 <div class="facebook-embed">
                     <iframe 

@@ -704,8 +704,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log('Form submitted');
-        
+        console.log('Form submission attempted');
+
+        // Basic validation
+        if (!form.checkValidity()) {
+            console.log('Form validation failed');
+            alert('Please fill all required fields correctly.');
+            return;
+        }
+
         // Show spinner, hide submit button
         spinner.classList.remove('hidden');
         submitButton.classList.add('hidden');
@@ -713,47 +720,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(form);
 
-        // Add multiple recipients
-        const recipients = ["joemortnvs@gmail.com", "apollo-heatsource@hotmail.com"];
-        const promises = recipients.map(email => {
-            return fetch(`https://formsubmit.co/ajax/${email}`, {
-                method: "POST",
-                body: formData,
-            });
+        fetch('https://formsubmit.co/ajax/joemortnvs@gmail.com', {
+            method: 'POST',
+            headers: { 
+                'Accept': 'application/json'
+            },
+            body: formData
+        })
+        .then(response => {
+            console.log('Response status:', response.status);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Form submission result:', data);
+            if (data.success) {
+                form.reset();
+                form.classList.add('hidden');
+                thankYouMessage.classList.remove('hidden');
+                console.log('Form submitted successfully');
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        })
+        .finally(() => {
+            spinner.classList.add('hidden');
+            submitButton.classList.remove('hidden');
+            console.log('Spinner hidden, button shown');
         });
-
-        // Handle all submissions
-        Promise.all(promises)
-            .then(responses => Promise.all(responses.map(res => res.json())))
-            .then(results => {
-                console.log('Form submission results:', results);
-                const allSuccessful = results.every(result => result.success);
-                if (allSuccessful) {
-                    console.log('All submissions successful');
-                    // Hide spinner, show thank you message
-                    spinner.classList.add('hidden');
-                    thankYouMessage.classList.remove('hidden');
-                    console.log('Thank you message shown');
-
-                    // Reset form
-                    form.reset();
-
-                    // Hide thank you message after 5 seconds
-                    setTimeout(function() {
-                        thankYouMessage.classList.add('hidden');
-                        submitButton.classList.remove('hidden');
-                        console.log('Thank you message hidden, button shown');
-                    }, 5000);
-                } else {
-                    throw new Error("One or more submissions failed");
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("An error occurred. Please try again later.");
-                spinner.classList.add('hidden');
-                submitButton.classList.remove('hidden');
-            });
     });
 });
-
