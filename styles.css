@@ -186,7 +186,7 @@ nav ul li a:hover::after {
     position: fixed;
     bottom: 185px;
     right: 22.5px;
-    background-color: #FF9900;
+    background-color: #ADD8E6;
     color: white;
     border: none;
     border-radius: 50%;
@@ -1073,6 +1073,50 @@ section#contact.contact h2 {
         font-size: 0.9rem; /* Reduce font size to minimum for very small screens */
     }
 }
+
+
+
+
+/* logo section between contact and facebook */
+
+/* Container Div */
+.xYz-logo-between-facebook-contact-section-981 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: -50px; /* Move up 50px */
+    background-color: transparent;
+}
+
+/* Logo Section */
+.LoGo-section-QwErTy-001 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoGo-image-90210 {
+    max-width: 100%;
+    height: auto;
+    max-height: 180px; /* Increase logo size even more */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .LoGo-image-90210 {
+        max-height: 150px; /* Slightly smaller for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .xYz-logo-between-facebook-contact-section-981 {
+        display: none; /* Hide completely below 768px */
+    }
+}
+
+
+
 
 
 
@@ -2973,7 +3017,6 @@ footer {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: var(--secondary-color);
     color: var(--white);
     display: flex;
     align-items: center;
@@ -2986,14 +3029,21 @@ footer {
 
 .whatsapp-button {
     bottom: 100px;
+    background-color: #25D366; /* WhatsApp green */
 }
 
 .contact-button {
     bottom: 20px;
+    background-color: #FFA500; /* Orange */
 }
 
 .whatsapp-button:hover,
 .contact-button:hover {
+    transform: scale(1.1);
+}
+
+
+.back-to-top:hover {
     transform: scale(1.1);
 }
 

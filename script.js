@@ -638,4 +638,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //testimonialsreviewsforgallerys page 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('scrolling-testimonial-container');
+  const slides = document.querySelectorAll('individual-review-card');
+  const prevButton = document.querySelector('previous-review-button');
+  const nextButton = document.querySelector('next-review-button');
+  let currentIndex = 0;
 
+  function slideToIndex(index) {
+    const targetSlide = slides[index];
+    if (window.innerWidth <= 768) {
+      container.scrollTo({
+        top: targetSlide.offsetTop,
+        behavior: 'smooth'
+      });
+    } else {
+      container.scrollTo({
+        left: targetSlide.offsetLeft,
+        behavior: 'smooth'
+      });
+    }
+    currentIndex = index;
+  }
+
+  function slideNext() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    slideToIndex(currentIndex);
+  }
+
+  function slidePrev() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    slideToIndex(currentIndex);
+  }
+
+  nextButton.addEventListener('click', slideNext);
+  prevButton.addEventListener('click', slidePrev);
+
+  // Auto-slide every 5 seconds
+  let autoSlideInterval = setInterval(slideNext, 5000);
+
+  // Pause auto-slide on hover
+  container.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+  container.addEventListener('mouseleave', () => autoSlideInterval = setInterval(slideNext, 5000));
+
+  // Adjust for window resize
+  function adjustLayout() {
+    slideToIndex(currentIndex);
+  }
+
+  window.addEventListener('resize', adjustLayout);
+
+  // Initial layout adjustment
+  adjustLayout();
+});
