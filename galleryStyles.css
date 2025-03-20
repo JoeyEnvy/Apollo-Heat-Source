@@ -490,7 +490,7 @@ body {
   height: 0;
   border-style: solid;
   border-width: 0 0 100px 100vw;
-  border-color: transparent transparent #1a5f7a transparent;
+  border-color: transparent transparent #FFFFFF transparent;
 }
 
 /* Upside-down Divider */
@@ -498,7 +498,8 @@ body {
   top: 0;
   bottom: auto;
   border-width: 100px 100vw 0 0;
-  border-color: #1a5f7a transparent transparent transparent;
+  border-color: #1a5f7a;
+  
 }
 
 /* Divider Text Styles */
@@ -515,7 +516,7 @@ body {
 
 /* Gallery Filters Section Styles */
 .gallery-filters-section {
-  background-color: #1a5f7a;
+  background-color: #FFFFFF;
   padding: 2rem 0;
   position: relative;
   z-index: 4;
@@ -530,11 +531,13 @@ body {
 }
 
 .contact-btn {
-  display: block; /* Full-width button */
+  display: block; /* Changed from inline to block for better centering */
+  width: 300px;
   margin: 20px auto 0; /* Centered with top margin */
   padding: 18px 40px; /* Larger padding for a prominent button */
   background-color: #ff9900;
   color: #ffffff;
+  text-align: center; /* Ensure text is centered within the button */
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem; /* Default font size for larger screens */
@@ -543,10 +546,9 @@ body {
   border-radius: 30px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
+  position: relative; /* Kept for potential hover effects */
   overflow: hidden;
 }
-
 .contact-btn::before {
   content: '';
   position: absolute;
@@ -677,8 +679,8 @@ body {
 /* Filter Button Styles */
 .filter-btn {
   flex: 0 0 auto;
-  background-color: #ffffff;
-  color: #1a5f7a;
+  background-color: #1a5f7a;
+  color: #ffffff;
   border: none;
   width: 200px;
   height: 60px;
@@ -706,8 +708,7 @@ body {
   display: flex;
   align-items: center;
   padding: 5rem 10rem;
-  background-color: #f5f5f5;
-   
+  background-color: #1a5f7a; /* Changed to blue */
 }
 
 /* Info Images Layout */
@@ -727,21 +728,27 @@ body {
   border-radius: 50px;
   border: 3px solid #ff9900;
   transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.5); /* Orange glow effect */
 }
 
 .info-images img:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(255, 153, 0, 0.7);
+  box-shadow: 0 0 20px rgba(255, 153, 0, 0.7); /* Enhanced orange glow on hover */
 }
+
 
 /* Info Text Styles */
 .info-text {
   flex: 1;
+  background-color: rgba(255, 255, 255, 0.9); /* White background with opacity */
+  border: 2px solid #ffffff; /* White border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 2rem; /* Add some padding */
 }
 
 .info-text h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #ff9900; /* Changed to orange */
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -759,7 +766,7 @@ body {
 .info-text p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #555;
+  color: #333; /* Darkened text color for better contrast */
   margin-bottom: 2rem;
 }
 
@@ -1715,31 +1722,323 @@ img[src="images/apollo rectangle white wrtiing.png"] {
 
 
 
-
+/* Wall of Images Section */
+/* Main container for the wall of images section */
 .wall-of-images {
-  padding: 20px;
+  padding: 3rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-family: 'Arial', sans-serif;
 }
 
+/* Styling for the description section */
+/* Default styles (for screens larger than 1024px) */
+.wall-description { 
+  height: auto;
+  min-height: 20vh;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6rem; /* Increased padding for more space around icons */
+}
+
+.wall-description h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wall-description p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.icon-left, .icon-right {
+  font-size: 3rem;
+  color: #ff6b35;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon-left {
+  left: 3rem; /* Moved icons further from edges */
+}
+
+.icon-right {
+  right: 3rem;
+}
+
+/* For screens 1024px and below */
+@media screen and (max-width: 1024px) {
+  .wall-description {
+    padding: 1.5rem;
+  }
+
+  .description-content {
+    max-width: 900px;
+    padding: 0 5rem; /* Adjusted padding */
+  }
+
+  .wall-description h2 {
+    font-size: 2rem;
+  }
+
+  .wall-description p {
+    font-size: 1rem;
+  }
+
+  .icon-left, .icon-right {
+    font-size: 2.5rem;
+  }
+
+  .icon-left {
+    left: 2.5rem;
+  }
+
+  .icon-right {
+    right: 2.5rem;
+  }
+}
+
+/* For screens 768px and below */
+@media screen and (max-width: 768px) {
+  .wall-description {
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .description-content {
+    max-width: 700px;
+    padding: 0 4rem; /* Adjusted padding */
+  }
+
+  .wall-description h2 {
+    font-size: 1.8rem;
+  }
+
+  .wall-description p {
+    font-size: 0.9rem;
+  }
+
+  .icon-left, .icon-right {
+    font-size: 2rem;
+  }
+
+  .icon-left {
+    left: 2rem;
+  }
+
+  .icon-right {
+    right: 2rem;
+  }
+}
+
+/* For screens 480px and below */
+@media screen and (max-width: 480px) {
+  .wall-description {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .description-content {
+    padding: 0 3rem; /* Adjusted padding */
+  }
+
+  .wall-description h2 {
+    font-size: 1.5rem;
+  }
+
+  .wall-description p {
+    font-size: 0.8rem;
+  }
+
+  .icon-left, .icon-right {
+    font-size: 1.5rem;
+  }
+
+  .icon-left {
+    left: 1.5rem;
+  }
+
+  .icon-right {
+    right: 1.5rem;
+  }
+}
+
+/* For screens 320px and below */
+@media screen and (max-width: 320px) {
+  .wall-description {
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .description-content {
+    padding: 0 2rem; /* Adjusted padding */
+  }
+
+  .wall-description h2 {
+    font-size: 1.3rem;
+  }
+
+  .wall-description p {
+    font-size: 0.7rem;
+  }
+
+  .icon-left, .icon-right {
+    font-size: 1.2rem;
+  }
+
+  .icon-left {
+    left: 1rem;
+  }
+
+  .icon-right {
+    right: 1rem;
+  }
+}
+
+
+/* Grid layout for the wall of images */
 .wall-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
+/* Styling for each grid item (image container) */
 .wall-grid-item {
-  width: 100%;
+  position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 20px;
-  border: 2px solid orange;
+  border: 4px solid #ff6b35;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
+/* Styling for the images within grid items */
 .wall-grid-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease-in-out;
 }
 
+/* Hover effect for grid items */
+.wall-grid-item:hover {
+  transform: scale(1.2); /* Larger scaling effect */
+  box-shadow: 0 0 40px rgba(255,107,53,0.6);
+  z-index: 2;
+}
+
+/* Hover effect for images within grid items */
+.wall-grid-item:hover img {
+  transform: scale(1.3); /* Makes the image grow significantly larger */
+}
+
+/* Fullscreen modal styling */
+.fullscreen-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Styling for the fullscreen image */
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Close button for the fullscreen modal */
+.fullscreen-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #4a90e2;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fullscreen-close:hover {
+  color: #357abd;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .wall-description h2 {
+    font-size: 2rem;
+  }
+  
+  .wall-description p {
+    font-size: 1rem;
+  }
+  
+  .icon-left, .icon-right {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wall-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .wall-description h2 {
+    font-size: 1.8rem;
+  }
+  
+  .wall-description p {
+    font-size: 0.9rem;
+  }
+  
+  .icon-left, .icon-right {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wall-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .wall-description h2 {
+    font-size: 1.6rem;
+  }
+  
+  .wall-description p {
+    font-size: 0.8rem;
+  }
+  
+  .icon-left, .icon-right {
+    display: none;
+  }
+}
 
 
 

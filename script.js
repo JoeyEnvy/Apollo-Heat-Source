@@ -578,19 +578,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //walll image gallery part for galler.html
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const wallGrid = document.querySelector('.wall-grid');
 
-  for (let i = 25; i <= 39; i++) {
+  function openFullscreen(img) {
+    const fullscreenModal = document.createElement('div');
+    fullscreenModal.className = 'fullscreen-modal';
+    
+    const fullscreenImage = document.createElement('img');
+    fullscreenImage.src = img.src;
+    fullscreenImage.alt = img.alt;
+    
+    const closeButton = document.createElement('span');
+    closeButton.className = 'fullscreen-close';
+    closeButton.innerHTML = '&times;';
+    
+    fullscreenModal.appendChild(fullscreenImage);
+    fullscreenModal.appendChild(closeButton);
+    document.body.appendChild(fullscreenModal);
+    
+    closeButton.onclick = function() {
+      document.body.removeChild(fullscreenModal);
+    }
+
+    // Close on click outside the image
+    fullscreenModal.onclick = function(e) {
+      if (e.target === fullscreenModal) {
+        document.body.removeChild(fullscreenModal);
+      }
+    }
+
+    // Close on 'Escape' key press
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.body.removeChild(fullscreenModal);
+      }
+    });
+  }
+
+  // Add images dynamically
+  for (let i = 20; i <= 39; i++) {
     const gridItem = document.createElement('div');
     gridItem.className = 'wall-grid-item';
 
     const img = document.createElement('img');
     img.src = `images/${i}.webp`;
-    img.alt = `Wall Image ${i}`;
+    img.alt = `Apollo Heat Source Installation ${i}`;
 
     gridItem.appendChild(img);
     wallGrid.appendChild(gridItem);
+
+    // Fullscreen functionality
+    gridItem.addEventListener('click', () => {
+      openFullscreen(img);
+    });
   }
 });
+
 
