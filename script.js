@@ -704,19 +704,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log('Form submission attempted');
+        console.log('Form submission initiated');
 
-        // Basic validation
-        if (!form.checkValidity()) {
-            console.log('Form validation failed');
-            alert('Please fill all required fields correctly.');
+        if (!validateForm()) {
+            console.error('Form validation failed');
             return;
         }
 
-        // Show spinner, hide submit button
         spinner.classList.remove('hidden');
-        submitButton.classList.add('hidden');
-        console.log('Spinner shown, button hidden');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        console.log('Spinner shown, button disabled');
 
         const formData = new FormData(form);
 
@@ -728,31 +726,63 @@ document.addEventListener('DOMContentLoaded', function() {
             body: formData
         })
         .then(response => {
-            console.log('Response status:', response.status);
+            console.log('Response received:', response.status);
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
             console.log('Form submission result:', data);
             if (data.success) {
-                form.reset();
-                form.classList.add('hidden');
-                thankYouMessage.classList.remove('hidden');
-                console.log('Form submitted successfully');
+                handleSuccess();
             } else {
-                throw new Error('Form submission failed');
+                throw new Error('Submission reported as unsuccessful');
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again later.');
+            console.error('Submission error:', error);
+            handleError(error);
         })
         .finally(() => {
             spinner.classList.add('hidden');
-            submitButton.classList.remove('hidden');
-            console.log('Spinner hidden, button shown');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+            console.log('Spinner hidden, button re-enabled');
         });
     });
+
+    function validateForm() {
+        const name = form.querySelector('input[name="name"]').value.trim();
+        const email = form.querySelector('input[name="email"]').value.trim();
+        const message = form.querySelector('textarea[name="message"]').value.trim();
+
+        if (!name || !email || !message) {
+            alert('Please fill in all fields');
+            return false;
+        }
+
+        if (!isValidEmail(email)) {
+            alert('Please enter a valid email address');
+            return false;
+        }
+
+        return true;
+    }
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function handleSuccess() {
+        form.reset();
+        form.classList.add('hidden');
+        thankYouMessage.classList.remove('hidden');
+        console.log('Form submitted successfully');
+    }
+
+    function handleError(error) {
+        alert(`An error occurred: ${error.message}. Please try again later.`);
+        console.error('Detailed error:', error);
+    }
 });
