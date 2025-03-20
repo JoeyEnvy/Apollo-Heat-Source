@@ -2258,6 +2258,54 @@ customer-feedback-title {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
+a[href="https://www.google.com/search?q=Apollo+Heatsource+Reviews"].chris-testimonials__review-button {
+  display: block; /* Change to block to center with margin: auto */
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #f4a261;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  max-width: 200px;
+}
+
+a[href="https://www.google.com/search?q=Apollo+Heatsource+Reviews"].chris-testimonials__review-button:hover {
+  background-color: #e76f51;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  a[href="https://www.google.com/search?q=Apollo+Heatsource+Reviews"].chris-testimonials__review-button {
+    font-size: 1.1rem;
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  a[href="https://www.google.com/search?q=Apollo+Heatsource+Reviews"].chris-testimonials__review-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  a[href="https://www.google.com/search?q=Apollo+Heatsource+Reviews"].chris-testimonials__review-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+  }
+}
+
+@media (max-width: 340px) {
+  a[href="https://www.google.com/search?q=Apollo+Heatsource+Reviews"].chris-testimonials__review-button {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+
 .tt-gallery-joe-tite {
   text-align: center;
   font-size: 3rem;
