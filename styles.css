@@ -268,6 +268,101 @@ section#home.hero .hero-content p {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
+.hero-quick-contact {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%; /* Ensure full width */
+}
+
+.hero-whatsapp-link {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #25D366;
+    transition: all 0.3s ease;
+}
+
+.hero-phone-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .hero-quick-contact {
+        justify-content: flex-start; /* Align to the left */
+        margin-top: 15px;
+    }
+
+    .hero-whatsapp-link {
+        font-size: 2.2rem;
+    }
+
+    .hero-phone-button {
+        font-size: 1.1rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .hero-quick-contact {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        margin-left: -60px;
+    }
+
+    .hero-whatsapp-link {
+        font-size: 1.5rem; /* Smaller icon */
+        flex-shrink: 0; /* Prevent shrinking */
+    }
+
+    .hero-phone-button {
+        font-size: 1rem;
+        padding: 10px 15px;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+}
+
+@media (max-width: 340px) {
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-whatsapp-link {
+        font-size: 1.3rem; /* Even smaller icon */
+    }
+
+    .hero-phone-button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+
+
 /* Welcome Section */
 section.welcome {
     background-color: var(--white);
@@ -1114,6 +1209,159 @@ section#contact.contact h2 {
         display: none; /* Hide completely below 768px */
     }
 }
+
+
+
+
+
+
+/* callsection contact us */ 
+
+
+
+
+
+
+
+/* WhatsApp/Call Us Section */
+/* WhatsApp/Call Us Section */
+.whatsapp-call-us {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -100px; /* Move upwards by 100px on desktop */
+}
+
+.whatsapp-icon-link {
+    text-decoration: none;
+    font-size: 5rem; /* Larger WhatsApp icon for desktop */
+    color: #25D366; /* Green color for WhatsApp icon */
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon-link:hover {
+    color: #1DAF4F; /* Darker green on hover */
+}
+
+.call-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.8rem; /* Slightly larger button font size */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.call-button i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.call-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.call-icon-link {
+    text-decoration: none;
+    font-size: 5rem; /* Larger call icon for desktop */
+    color: var(--accent-color); /* Match accent color */
+    transition: all 0.3s ease;
+}
+
+.call-icon-link:hover {
+    color: var(--primary-color); /* Darker accent color on hover */
+}
+
+/* Media Queries */
+
+/* For Medium Screens (1024px and below) */
+@media (max-width: 1024px) {
+    .whatsapp-call-us {
+        margin-top: -150px; /* Move further upwards on medium screens */
+        gap: 15px; /* Reduce gap between items */
+    }
+
+    .whatsapp-icon-link, .call-icon-link {
+        font-size: 6rem; /* Larger icons for medium screens */
+    }
+
+    .call-button {
+        font-size: 1.6rem; /* Slightly smaller button font size */
+        padding: 12px 20px; /* Adjust padding for medium screens */
+    }
+}
+
+/* For Tablets (768px and below) */
+@media (max-width: 768px) {
+    .whatsapp-call-us {
+        margin-top: -150px; /* Move even further upwards on tablets */
+        gap: 20px; /* Maintain spacing between items */
+    }
+
+    .whatsapp-icon-link, .call-icon-link {
+        font-size: 7rem; /* Even larger icons for tablets */
+    }
+
+    .call-button {
+        font-size: 1.4rem; /* Slightly smaller button font size */
+        padding: 10px 18px; /* Adjust padding for tablets */
+        text-align: center;
+    }
+}
+
+/* For Large Phones (480px and below) */
+@media (max-width: 480px) {
+    .whatsapp-call-us {
+        margin-top: -150px; /* Move upwards, but less than before */
+        gap: 20px; /* Slightly reduce spacing between items */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .whatsapp-icon-link, .call-icon-link {
+        font-size: 5rem; /* Smaller icons for phones */
+        margin-bottom: -5px; /* Adjust spacing */
+    }
+
+    .call-button {
+        font-size: 1.1rem; /* Slightly reduce button font size */
+        padding: 10px 18px; /* Adjust padding */
+        width: 75%; /* Make button slightly narrower */
+        max-width: 280px; /* Limit maximum width */
+    }
+}
+
+/* For Small Phones (340px and below) */
+@media (max-width: 340px) {
+    .whatsapp-call-us {
+        margin-top: -120px; /* Less upward movement for very small screens */
+        gap: 15px; /* Further reduce gap to fit content */
+    }
+
+    .whatsapp-icon-link, .call-icon-link {
+        font-size: 4rem; /* Even smaller icons for very small screens */
+    }
+
+    .call-button {
+        font-size: 0.9rem; /* Further reduce font size */
+        padding: 8px 12px; /* Adjust padding */
+        width: 85%; /* Adjust button width */
+    }
+}
+
+
+
+
 
 
 

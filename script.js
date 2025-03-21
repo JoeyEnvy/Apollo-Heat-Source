@@ -645,52 +645,40 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextButton = document.querySelector('next-review-button');
   let currentIndex = 0;
 
-  function slideToIndex(index) {
-    const targetSlide = slides[index];
-    if (window.innerWidth <= 768) {
-      container.scrollTo({
-        top: targetSlide.offsetTop,
-        behavior: 'smooth'
-      });
-    } else {
-      container.scrollTo({
-        left: targetSlide.offsetLeft,
-        behavior: 'smooth'
-      });
-    }
-    currentIndex = index;
+  function updateSlides(direction) {
+    slides.forEach((slide, index) => {
+      if (index >= currentIndex && index < currentIndex + 3) {
+        slide.style.display = 'block';
+        slide.style.opacity = '0';
+        slide.style.transform = `translateX(${direction === 'next' ? '100%' : '-100%'})`;
+        setTimeout(() => {
+          slide.style.opacity = '1';
+          slide.style.transform = 'translateX(0)';
+          slide.style.transition = 'opacity 0.5s, transform 0.5s';
+        }, 50);
+      } else {
+        slide.style.display = 'none';
+      }
+    });
   }
 
   function slideNext() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    slideToIndex(currentIndex);
+    currentIndex = (currentIndex + 1) % (slides.length - 2);
+    updateSlides('next');
   }
 
   function slidePrev() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    slideToIndex(currentIndex);
+    currentIndex = (currentIndex - 1 + slides.length - 2) % (slides.length - 2);
+    updateSlides('prev');
   }
 
   nextButton.addEventListener('click', slideNext);
   prevButton.addEventListener('click', slidePrev);
 
-  // Auto-slide every 5 seconds
-  let autoSlideInterval = setInterval(slideNext, 5000);
-
-  // Pause auto-slide on hover
-  container.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-  container.addEventListener('mouseleave', () => autoSlideInterval = setInterval(slideNext, 5000));
-
-  // Adjust for window resize
-  function adjustLayout() {
-    slideToIndex(currentIndex);
-  }
-
-  window.addEventListener('resize', adjustLayout);
-
-  // Initial layout adjustment
-  adjustLayout();
+  // Initial setup
+  updateSlides('next');
 });
+
 
 
 //contactform formsubmit

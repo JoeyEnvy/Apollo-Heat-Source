@@ -2409,21 +2409,16 @@ next-review-button {
 }
 
 @media (max-width: 1650px) {
-  rotating-testimonial-carousel {
-    max-width: 100%;
-    padding: 0 80px;
-  }
-
   scrolling-testimonial-container {
     flex-direction: column;
-    height: auto;
-    overflow-y: hidden;
+    height: 600px; /* Adjusted height to fit three reviews */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
   }
 
   individual-review-card {
-    flex: 0 0 100%;
-    min-width: 100%;
-    margin-right: 0;
+    scroll-snap-align: start;
+    height: 200px; /* Fixed height for each review */
     margin-bottom: 20px;
   }
 
@@ -2444,47 +2439,6 @@ next-review-button {
 
   next-review-button {
     right: calc(50% - 70px);
-  }
-
-  glowing-praise {
-    font-size: 1.05rem;
-  }
-
-  happy-customer-name {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  rotating-testimonial-carousel {
-    padding: 0 60px;
-  }
-
-  individual-review-card {
-    padding: 2rem;
-  }
-
-  previous-review-button,
-  next-review-button {
-    width: 45px;
-    height: 45px;
-    font-size: 1.8rem;
-  }
-
-  previous-review-button {
-    left: calc(50% - 60px);
-  }
-
-  next-review-button {
-    right: calc(50% - 60px);
-  }
-
-  glowing-praise {
-    font-size: 1rem;
-  }
-
-  happy-customer-name {
-    font-size: 0.9rem;
   }
 }
 

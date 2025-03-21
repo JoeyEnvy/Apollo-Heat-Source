@@ -424,6 +424,23 @@ nav ul li a:hover {
     width: 100vw;
 }
 
+@media (max-width: 480px) {
+    .reviews-intro {
+        margin-top: -50px; /* Move upwards by 50px */
+        height: calc(50vh + 50px); /* Adjust height to compensate for the upward movement */
+        min-height: 450px; /* Adjust min-height to compensate for the upward movement */
+    }
+}
+
+@media (max-width: 340px) {
+    .reviews-intro {
+        margin-top: -50px; /* Move upwards by 50px */
+        height: calc(50vh + 50px); /* Adjust height to compensate for the upward movement */
+        min-height: 450px; /* Adjust min-height to compensate for the upward movement */
+    }
+}
+
+
 .reviews-intro::before {
     content: '';
     position: absolute;

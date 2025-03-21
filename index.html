@@ -92,12 +92,21 @@
         <img src="images/Opacity Apollo Hero Image.png" alt="Apollo Hero Image">
     </div>
     <div class="hero-content">
-        <h1>Welcome to Apollo Heat Source</h1>
-        <p>Covering Doncaster, South Yorkshire and surrounding areas</p>
-        <a href="#contact" class="cta-button">
-            <i class="fas fa-fire"></i> Get a Free Quote
+    <h1>Welcome to Apollo Heat Source</h1>
+    <p>Covering Doncaster, South Yorkshire and surrounding areas</p>
+    <a href="#contact" class="cta-button">
+        <i class="fas fa-fire"></i> Get a Free Quote
+    </a>
+    <div class="hero-quick-contact">
+        <a href="https://wa.me/447941338659" target="_blank" class="hero-whatsapp-link">
+            <i class="fab fa-whatsapp hero-whatsapp-icon"></i>
         </a>
+        <button class="hero-phone-button" onclick="location.href='tel:07941338659'">
+            <i class="fas fa-phone-alt"></i> 07941 338 659
+        </button>
     </div>
+</div>
+
 </section>
 
 
@@ -370,37 +379,49 @@
             <div class="form-and-facebook">
                 <div class="form-container">
                    <form id="contact-form" class="contact-form" action="https://formsubmit.co/joemortnvs@gmail.com" method="POST">
-    <input type="hidden" name="_cc" value="apollo-heatsource@hotmail.com">
-    <input type="hidden" name="_subject" value="New Contact Form Submission">
-    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
-    <input type="hidden" name="_template" value="table">
+                       <input type="hidden" name="_cc" value="apollo-heatsource@hotmail.com">
+                       <input type="hidden" name="_subject" value="New Contact Form Submission">
+                       <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                       <input type="hidden" name="_template" value="table">
 
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit" class="submit-button">Send Message</button>
-    <div id="loading-spinner" class="hidden"></div>
-</form>
+                       <input type="text" name="name" placeholder="Your Name" required>
+                       <input type="email" name="email" placeholder="Your Email" required>
+                       <textarea name="message" placeholder="Your Message" required></textarea>
+                       <button type="submit" class="submit-button">Send Message</button>
+                       <div id="loading-spinner" class="hidden"></div>
+                   </form>
 
-<div id="thank-you-message" class="hidden">
-    <p>Thank you for your message, we'll be with you soon.</p>
-    <p>Or call us here at <strong>07941 338 659</strong></p>
-</div>
-
+                   <div id="thank-you-message" class="hidden">
+                       <p>Thank you for your message, we'll be with you soon.</p>
+                       <p>Or call us here at <strong>07941 338 659</strong></p>
+                   </div>
                 </div>
-   
 
+                <!-- WhatsApp/Call Us Section -->
+                <div class="whatsapp-call-us">
+                    <a href="https://wa.me/447941338659" target="_blank" class="whatsapp-icon-link">
+                        <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    </a>
+                    <button class="call-button" onclick="location.href='tel:07941338659'">
+                        <i class="fas fa-phone-alt"></i> 07941 338 659
+                    </button>
+                    <a href="tel:07941338659" class="call-icon-link">
+                        <i class="fas fa-phone call-icon"></i>
+                    </a>
+                </div>
+
+                <!-- Facebook Embed -->
                 <div class="facebook-embed">
                     <iframe 
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FApolloheatsource&tabs=timeline&width=400&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                        width="100%" height="450" 
-                        style="border: 5px solid #ddd; border-radius: 10px;" 
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FApolloheatsource&tabs=timeline&width=400&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="100%" height="450"
+                        style="border: 5px solid #ddd; border-radius: 10px;"
                         allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
         </div>
-
+    </div>s
 
 <div class="xYz-logo-between-facebook-contact-section-981">
     <div class="LoGo-section-QwErTy-001">
@@ -566,7 +587,7 @@
             <h3>Contact Us</h3>
             <p><i class="fas fa-envelope"></i> <a href="mailto:apollo-heatsource@hotmail.com">apollo-heatsource@hotmail.com</a></p>
             <p><i class="fas fa-phone"></i> <a href="tel:07941338659">07941 338 659</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> Doncaster, South Yorkshire & Mexborough</p>
+            <p><i class="fas fa-map-marker-alt"></i> Doncaster, South Yorkshire </p>
             <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/447941338659" target="_blank">WhatsApp Us</a></p>
         </div>
         <div class="footer-section">
@@ -615,7 +636,7 @@
 
  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
-
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
