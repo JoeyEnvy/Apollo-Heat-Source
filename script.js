@@ -622,7 +622,16 @@ document.addEventListener('DOMContentLoaded', () => {
     gridItem.className = 'wall-grid-item';
 
     const img = document.createElement('img');
-    img.src = `images/${i}.webp`;
+    // Replace images 26, 27, and 28 with 19, 18, and 17 respectively
+    if (i === 26) {
+      img.src = `images/19.webp`;
+    } else if (i === 27) {
+      img.src = `images/18.webp`;
+    } else if (i === 28) {
+      img.src = `images/17.webp`;
+    } else {
+      img.src = `images/${i}.webp`;
+    }
     img.alt = `Apollo Heat Source Installation ${i}`;
 
     gridItem.appendChild(img);
@@ -634,7 +643,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
 
 //testimonialsreviewsforgallerys page 
 
