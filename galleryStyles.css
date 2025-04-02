@@ -521,6 +521,14 @@ body {
   overflow: hidden;
 }
 
+@media screen and (max-width: 1024px) {
+    .gallery-filters-section {
+        background-color: #ffffff !important; /* White background with !important */
+    }
+}
+
+
+
 /* Gallery Filters Header */
 /* Custom Gallery Filters Header */
 .custom-gallery-filters-header {
